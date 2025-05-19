@@ -2,7 +2,9 @@
 </script>
 
 <template>
-   <router-view />
+   <div class="wrapper">
+     <router-view />
+   </div>
 </template>
 
 <style scoped>
