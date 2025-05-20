@@ -1,0 +1,167 @@
+// Skills
+
+.skills {
+  padding-top: 120px;
+  
+  @media (max-width: #{$md3}px) {
+		padding-top: 100px;
+	}
+}
+.skills__content {
+  // border-top:1px solid #1a1d24;
+  // border-bottom:1px solid #1a1d24;
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 300px;
+  @media (max-width: #{$md1}px) {
+		margin-bottom: 150px;
+	}
+
+  @media (max-width: #{$md3}px) {
+		margin-bottom: 100px;
+	}
+  @media (max-width: 533px) {
+		margin-bottom: 40px;
+	}
+  @media (max-width: 533px) {
+		margin-bottom: 0px;
+	}
+
+}
+.skills__title {
+  opacity: 1;
+  margin-bottom: 80px;
+  transform: translate(0px,-100px);
+  @media (max-width: #{$md3}px) {
+		margin-bottom: 40px;
+	}
+  transition: all 1.2s;
+  
+}
+
+.skills__title.active{
+ opacity: 1;
+ transform: translate(0,0px);
+}
+.title{
+  text-align: center;
+  font-size: 96px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media (max-width: #{$md2}px) {
+		font-size: 76px;
+	}
+  @media (max-width: #{$md3}px) {
+		font-size: 36px;
+	}
+}
+.skills__list {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  // gap: 10px 50px;
+  @media (max-width: #{$md3}px) {
+    justify-content: space-evenly;
+	}
+}
+.skills__item {
+  text-align: center;
+  opacity: 1;
+  transition: all 1.2s;
+  transform: translate(0,0px);
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  margin-right: 65px;
+
+    @media (max-width: 533px) {
+    margin-right: 25px;
+	}
+  
+}
+
+.skills__item.active{
+  transform: translate(0,0px);
+  opacity: 1;
+}
+.skills__img {
+}
+.skills__img img{
+  width: 60px;
+  @media (max-width: #{$md3}px) {
+    width: 120px;
+	}
+  @media (max-width: 533px) {
+    width: 40px;
+	}
+  
+}
+.skills__name {
+  font-size: 16px;
+  font-weight: 700;
+  display: none;
+}
+.title-overlay {
+  opacity: 1;
+  text-align: center;
+  font-size: 200px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255,0.3); /* Добавляем обводку (цвет и ширина) */
+  -webkit-text-fill-color: transparent; /* Заполнение текста тоже делаем прозрачным */
+  position: absolute;
+  top: -50px;
+  right: 50%;
+  transform: translate(50%,0);
+
+  @media (max-width: #{$md1}px) {
+		font-size: 150px;
+    top: -30px;
+	}
+  @media (max-width: #{$md2}px) {
+		font-size: 120px;
+    top: -25px;
+	}
+  @media (max-width: #{$md3}px) {
+		font-size: 66px;
+    top: -15px;
+	}
+
+
+}
+
+.title-overlay-min{
+  @media (max-width: #{$md3}px) {
+		font-size: 50px;
+    top: -5px;
+	}
+}
+
+
+
+.skills__slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.skills__track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+
+/* Ключевая анимация */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

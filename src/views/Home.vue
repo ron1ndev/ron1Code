@@ -1,5 +1,6 @@
 <script setup>
 import Header from '@/components/header/header.vue';
+import Skills from '@/components/skills/skills.vue';
 import { onMounted, onUnmounted, reactive } from 'vue';
 
 const InitText = reactive({
@@ -127,6 +128,7 @@ onUnmounted(()=>{
           <div class="hero__img-code2"><img src="../assets/img/home/code2.png" alt=""></div> -->
       </section>
     </div>
+    <Skills/>
   </main>
 </template>
 
@@ -153,17 +155,17 @@ onUnmounted(()=>{
   padding-top: 100px;
   // margin-top: 170px;
   // margin-bottom: 120px;
-  min-height: calc(100vh); // Высота устроства - отступ сверху - отступ от последующего блока
+  // min-height: calc(100vh); // Высота устроства - отступ сверху - отступ от последующего блока
 
   @media (max-width: #{$md1}px) {
-    min-height: calc(100vh);
+    // min-height: calc(100vh);
   }
 
   @media (max-width: #{$md3}px) {
    
     padding-top: 160px;
     
-    min-height: calc(100vh);
+    // min-height: calc(100vh);
   }
 }
 .hero__content {
