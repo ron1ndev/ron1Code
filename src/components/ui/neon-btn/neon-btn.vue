@@ -1,0 +1,50 @@
+<script setup>
+import { defineProps } from 'vue';
+
+defineProps({
+  text:{
+    type:String,
+    required:true
+  },
+  background:{
+    type:String,
+    default:'#03e9f4'
+  }
+})
+</script>
+
+<template>
+  <div class="neon-btn" :style="{'--neon-bg':background}">
+    <a href="#">
+      {{ text }}
+    </a>
+  </div>
+</template>
+
+
+<style lang="scss" scoped>
+.neon-btn{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+    a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 40px 0px 0px 0px;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    box-shadow: 0 0 5px var(--neon-bg), 0 0 25px var(--neon-bg), 0 0 50px var(--neon-bg),0 0 200px var(--neon-bg);
+    color: #0f0f0f  ;
+    background: var(--neon-bg);
+    font-weight: 600;
+    z-index:10000;
+  }
+  a:hover {
+    box-shadow: 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg), 0 0 80px var(--neon-bg);
+    transition: 0.5s ease-in-out;
+
+  }
+}
+</style>

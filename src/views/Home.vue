@@ -1,6 +1,7 @@
 <script setup>
 import Header from '@/components/header/header.vue';
 import Skills from '@/components/skills/skills.vue';
+import NeonBtn from '@/components/ui/neon-btn/neon-btn.vue';
 import { onMounted, onUnmounted, reactive } from 'vue';
 
 const InitText = reactive({
@@ -128,7 +129,16 @@ onUnmounted(()=>{
           <div class="hero__img-code2"><img src="../assets/img/home/code2.png" alt=""></div> -->
       </section>
     </div>
+
+    <div class="hero__btns">
+      <NeonBtn
+      text="Смотреть проекты"
+      background="#03e9f4"
+      />
+    </div>
+
     <Skills/>
+
   </main>
 </template>
 
@@ -143,7 +153,11 @@ onUnmounted(()=>{
 
 <style lang="scss" scoped>
 // MAIN HERO
-
+.hero__btns{
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
 .main {
   
 }
