@@ -12,7 +12,7 @@
   // border-bottom:1px solid #1a1d24;
   max-width: 850px;
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   margin-bottom: 300px;
   @media (max-width: #{$md1}px) {
@@ -50,9 +50,11 @@
   font-size: 96px;
   font-weight: 700;
   text-transform: uppercase;
-
-  @media (max-width: #{$md2}px) {
+  @media (max-width: #{$md1}px) {
 		font-size: 76px;
+	}
+  @media (max-width: #{$md2}px) {
+		font-size: 50px;
 	}
   @media (max-width: #{$md3}px) {
 		font-size: 36px;
@@ -92,7 +94,7 @@
 .skills__img img{
   width: 60px;
   @media (max-width: #{$md3}px) {
-    width: 120px;
+    width: 60px;
 	}
   @media (max-width: 533px) {
     width: 40px;
@@ -144,7 +146,7 @@
 
 
 .skills__slider {
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
   position: relative;
 }
