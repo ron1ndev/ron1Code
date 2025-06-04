@@ -1,0 +1,22 @@
+.theme-light{
+ --main-bg:#f8f9fa ;
+ --main-text:#1a2634;
+ --main-icons:#37474f ;
+ --main-icons-hover:#556770 ;
+ --main-border-bg:#ccc;
+ --neon-btn-color:#e1e8f0;
+ --neon-btn-bg:#03e9f4;
+ --neon-btn-shadow:none;
+}
+
+
+.theme-dark{
+  --main-bg:#03050a;
+  --main-text:#fff;
+  --main-icons:#bbb ;
+  --main-icons-hover:#fff ;
+  --main-border-bg:#1a1d24;
+  --neon-btn-color:#0f0f0f;
+  --neon-btn-bg:#1a2634;
+  --neon-btn-shadow:0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,0 0 200px #03e9f4;
+}

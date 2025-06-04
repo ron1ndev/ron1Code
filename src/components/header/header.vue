@@ -7,7 +7,15 @@ const switchTheme  = () =>{
   isSwitch.value = !isSwitch.value
 
   const root = document.documentElement
-  root.classList.toggle('light-theme',isSwitch.value)
+
+  if(isSwitch.value){
+    root.classList.add('theme-light')
+    root.classList.remove('theme-dark')
+  }else{
+    root.classList.add('theme-dark')
+    root.classList.remove('theme-light')
+  }
+  
 }
 
 </script>
@@ -53,8 +61,8 @@ const switchTheme  = () =>{
             </svg>
           </div>
           <div class="header__theme-switch theme-switch"
-          :class="{switch:isSwitch}" 
-          @click="switchTheme">
+              :class="{switch:isSwitch}" 
+              @click="switchTheme">
               <div class="theme-switch__circle"></div>
           </div>
           <div class="header__social">

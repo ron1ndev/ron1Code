@@ -31,7 +31,7 @@ defineProps({
     margin: 40px 0px 0px 0px;
     transition: 0.5s;
     letter-spacing: 1px;
-    box-shadow: 0 0 5px var(--neon-bg), 0 0 25px var(--neon-bg), 0 0 50px var(--neon-bg),0 0 200px var(--neon-bg);
+    box-shadow: var(--neon-btn-shadow);
     color: #0f0f0f  ;
     background: var(--neon-bg);
     font-weight: 600;

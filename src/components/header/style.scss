@@ -11,7 +11,7 @@
   // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для эффекта глубины */
   // background: linear-gradient(90deg, rgba(255,128,2,1) 0%, rgb(253, 85, 18) 100%);
 
-    border-bottom:1px solid #1a1d24;
+    border-bottom:1px solid var(--main-border-bg);
 
 }
 .header__content {
@@ -47,7 +47,7 @@
   transition: all .3s;
 }
 .logo__title a{
-  color:#fff;
+  color:var(--main-text);
   font-size: 24px;
 
   @media (max-width: #{$md3}px) {
@@ -66,13 +66,13 @@
 
 
 .logo__link{
-  color:#fff;
+  color:var(--main-text);
 }
 .logo__icon {
 }
 
 .logo__icon-path {
-  fill: #fff; /* Задаем начальный цвет для SVG */
+  fill: var(--main-text); /* Задаем начальный цвет для SVG */
   transition: fill 0.3s ease; /* Плавный переход */
 }
 
@@ -163,7 +163,7 @@
   }  
 }
 .header__link{
-  color:#fff;
+  color:var(--main-text);
   transition: all .3s;
   @media (max-width: #{$md3}px) {
     padding: 10px 0px;
@@ -171,7 +171,7 @@
   
 }
 .btn{
-  color: #fff;
+  color: var(--main-text);
   width: 140px;
   padding: 10px 0px;
   text-align: center;
@@ -186,7 +186,7 @@
 .theme-switch {
   width: 40px;
   height: 20px;
-  border: 1px solid #1a1d24;
+  border: 1px solid var(--main-border-bg);
   border-radius: 16px;
   display: flex;
   align-items:center;
@@ -217,26 +217,26 @@
   display: flex;
   align-items:center;
   gap: 16px;
-  border-left: 1px solid #1a1d24;
+  border-left: 1px solid var(--main-border-bg);
   padding-left: 20px;
 }
 .git-social-link-icon{
   color:red;
   width: 20px;
   height: 20px;
-  fill: #bbb;
+  fill: var(--main-icons);
   transition: .3s all;
   &:hover{
-    fill: #fff;
+    fill: var(--main-icons-hover);
   }
 }
 .tg-social-link-icon{
   width: 20px;
   height: 20px;
-  fill: #bbb;
+  fill: var(--main-icons);
     transition: .3s all;
     &:hover{
-    fill: #fff;
+    fill: var(--main-icons-hover);
   }
 }
 
@@ -244,14 +244,14 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  fill: #bbb;
+  fill: var(--main-icons);
     transition: .3s all;
     &:hover{
-    fill: #fff;
+    fill: var(--main-icons-hover);
   }
 }
 .header__locales-btn{
-  border-left:1px solid #1a1d24;
-  border-right:1px solid #1a1d24;
+  border-left:1px solid var(--main-border-bg);
+  border-right:1px solid var(--main-border-bg);
   padding: 0px 10px;
 }

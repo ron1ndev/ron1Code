@@ -185,7 +185,7 @@ main{
 }
 .hero__git {
   .logo__icon-path {
-    color:white;
+    color:var(--main-text);
   }
   @media (max-width: #{$md2}px) {
     display: none;
@@ -194,7 +194,7 @@ main{
 .hero__tg {
   margin-bottom: 20px;
   svg{
-   color: white;
+   color: var(--main-text);
   }
 }
 .hero__img-code1 {
