@@ -34,11 +34,10 @@
   opacity: 1;
   margin-bottom: 80px;
   transform: translate(0px,-100px);
+  transition: all 1.2s;
   @media (max-width: #{$md3}px) {
 		margin-bottom: 40px;
 	}
-  transition: all 1.2s;
-  
 }
 
 .skills__title.active{
