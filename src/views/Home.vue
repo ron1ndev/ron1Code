@@ -131,7 +131,7 @@ const menuLinks = [
                             </svg>
                   </a>
                   </div>
-                  <!-- <div class="hero__tg">
+                  <div class="hero__tg">
                       <a href="https://t.me/R_0N11" target="_blank">
                           <svg class="logo__icon-svg tg" width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
                               <defs>
@@ -150,7 +150,7 @@ const menuLinks = [
                               />
                             </svg>
                   </a>
-                  </div> -->
+                  </div>
               </div>
           </div>
           <!-- <div class="hero__img-code1"><img src="../assets/img/home/code2.png" alt=""></div>
@@ -160,9 +160,11 @@ const menuLinks = [
 
     <div class="hero__btns">
       <NeonBtn
-      text="Смотреть проекты"
       background="#03e9f4"
-      />
+      >
+      Смотреть проекты
+     </NeonBtn>
+
     </div>
 
     <Skills/>
@@ -223,7 +225,12 @@ font-size: 11px;
   padding: 10px 20px 10px 20px;
   display: flex;
   align-items:center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 60px;
+  @media (max-width:462px) {
+    gap: 0px;
+    justify-content: space-around;
+  }
 }
 
 .menu-mobile__item{
@@ -429,7 +436,7 @@ transition: opacity 3s;
   position: fixed;
   right: 0px;
   bottom: 180px;
-z-index: 10;
+  z-index: 10;
 
 @media (max-width: 1800px) {
   right: -20px;
@@ -439,9 +446,14 @@ z-index: 10;
   right: 20px;
 
 }
+@media (max-width: #{$md2}px) {
+  right: 20px;
+  bottom: 10px;
+
+}
 @media (max-width: #{$md3}px) {
   right: 10px;
-  bottom: 0;
+  bottom: 50px;
 
 }
 
@@ -460,7 +472,7 @@ z-index: 10;
    /* Добавляем анимацию */
    animation: gradientShift 3s infinite linear;
 
-   @media (max-width: #{$md3}px) {
+   @media (max-width: #{$md2}px) {
    display: none;
   }
   
@@ -494,7 +506,7 @@ z-index: 10;
   font-size: 15px;
   text-transform: uppercase;
   height: 0;
-  @media (max-width: #{$md3}px) {
+  @media (max-width: #{$md2}px) {
     display: none;
    }
 }
@@ -504,9 +516,9 @@ z-index: 10;
     color:white;
   }
   // margin-bottom: 20px;
-  @media (max-width: #{$md3}px) {
+  @media (max-width: #{$md2}px) {
     display: none;
-   }
+  }
 }
 .logo__icon-svg {
 }

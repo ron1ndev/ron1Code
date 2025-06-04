@@ -2,10 +2,6 @@
 import { defineProps } from 'vue';
 
 defineProps({
-  text:{
-    type:String,
-    required:true
-  },
   background:{
     type:String,
     default:'#03e9f4'
@@ -16,7 +12,7 @@ defineProps({
 <template>
   <div class="neon-btn" :style="{'--neon-bg':background}">
     <a href="#">
-      {{ text }}
+     <slot></slot>
     </a>
   </div>
 </template>
