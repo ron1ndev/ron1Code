@@ -111,15 +111,15 @@ main{
 .hero__social {
   display: flex;
   flex-direction: column;
-   gap: 10px 0;
+  gap: 10px 0;
   text-align: center;
   position: fixed;
-  right: 0px;
+  right: 20px;
   bottom: 180px;
   z-index: 10;
 
   @media (max-width: 1800px) {
-    right: -20px;
+    right: 10px;
   }
   @media (max-width: #{$md1}px) {
     right: 20px;
@@ -173,9 +173,10 @@ main{
   content:attr(data-label);
   display: inline-block;
   position: relative;
-  top: 350px;
-  right: -50%;
-  transform: translate(-43%,0) rotate(90deg);
+  top: 300px;
+  right: -70%;
+  width: 0;
+  transform: rotate(90deg);
   font-size: 15px;
   text-transform: uppercase;
   height: 0;

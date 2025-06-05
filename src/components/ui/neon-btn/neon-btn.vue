@@ -36,6 +36,8 @@ defineProps({
     background: var(--neon-bg);
     font-weight: 600;
     border-radius:8px;
+    min-width: 216px;
+    text-align: center;
   }
   a:hover {
     box-shadow: 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg), 0 0 80px var(--neon-bg);
