@@ -6,7 +6,6 @@ const themeMode = ref('dark')
 onMounted(()=>{
 
   document.documentElement.classList.add(`theme-${themeMode.value}`)
-  console.log(themeMode)
 })
 
 
