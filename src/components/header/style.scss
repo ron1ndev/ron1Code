@@ -207,6 +207,10 @@
     background:#{$mainBackgroundGradient};
     border-radius: 50%;
     transition: .3s all;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    color:#e1e8f0;
 }
 .header__options{
   display: flex;
@@ -254,4 +258,11 @@
   border-left:1px solid var(--main-border-bg);
   border-right:1px solid var(--main-border-bg);
   padding: 0px 10px;
+
+  &.active{
+
+    .locales-btn-icon{
+      fill:#03e9f4;
+    }
+  }
 }

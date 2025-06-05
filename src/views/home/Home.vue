@@ -69,10 +69,10 @@ onUnmounted(()=>{
                   <div class="hero__title-app">
                       <span class="hero__title-gradient"><span class="k1">Web Apps</span> & <span class="k2">Websites</span></span>
                   </div>                  
-                   <div class="hero__subtitle">UI для сайтов и приложений</div>
+                   <div class="hero__subtitle">{{ $t('hero.description') }}</div>
               </div>
   
-              <div class="hero__social">
+              <div class="hero__social" :data-label="$t('social.label')">
                   <div class="hero__git">
                       <a href="https://github.com/ron1ndev" target="_blank">
                           <svg class="logo__icon-svg" width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +122,7 @@ onUnmounted(()=>{
       <NeonBtn
       background="#03e9f4"
       >
-      Смотреть проекты
+      {{ $t('hero.btn') }}
      </NeonBtn>
 
     </div>
