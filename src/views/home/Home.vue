@@ -77,7 +77,7 @@ onUnmounted(()=>{
           <div class="hero__content">
               <div class="hero__title">
                   <div class="hero__title-dev">
-                      {{ printText.dev }}
+                      <span class="hero__title-dev-fake" v-if="!printText.dev.length">Frontend develop</span><span v-else>{{ printText.dev }}</span>
                   </div>
                   <div class="hero__title-app">
                       <span class="hero__title-gradient"><span class="k1">Web Apps</span> & <span class="k2">Websites</span></span>

@@ -3,6 +3,11 @@ main{
   position: relative;
 }
 
+.hero__title-dev-fake{
+  opacity: 0;
+  visibility: hidden;
+}
+
 // MAIN HERO
 .hero__btns{
   display: flex;
