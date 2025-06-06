@@ -6,8 +6,24 @@ body {
     overflow-anchor: none;
     background-color: var(--main-bg);
     font-family: #{$fontFamily};
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
   }
-  
+
+  &::-webkit-scrollbar-thumb {
+    // border: 1px solid orange;
+    border-radius: 5px;
+    background: var(--scrollbar-thumb-bg);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+  }
+  }
+
   body._lock {
     overflow: hidden;
   }
