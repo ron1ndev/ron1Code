@@ -1,32 +1,39 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, watch } from 'vue'
+import { useDesktopStore } from '@/store/desktop';
 import { useI18n } from 'vue-i18n';
+
 const { locale } = useI18n();
-const isSwitch = ref(false)
+const store = useDesktopStore()
 
 const currentLocale = computed(()=>{
   return locale.value
 })
 
+const isDark = computed(()=>{
+  return store.isDarkTheme 
+})
+
 const switchTheme  = () =>{
+  store.changeTheme(!isDark.value)
+}
 
-  isSwitch.value = !isSwitch.value
+const switchLocal = ()=>{
+   locale.value = locale.value === 'ru' ? 'en' : 'ru';
+}
 
+
+watch(isDark,(val)=>{
   const root = document.documentElement
 
-  if(isSwitch.value){
+  if(!val){
     root.classList.add('theme-light')
     root.classList.remove('theme-dark')
   }else{
     root.classList.add('theme-dark')
     root.classList.remove('theme-light')
   }
-  
-}
-
-const switchLocal = ()=>{
-   locale.value = locale.value === 'ru' ? 'en' : 'ru';
-}
+})
 
 </script>
 
@@ -73,7 +80,7 @@ const switchLocal = ()=>{
             </svg>
           </div>
           <div class="header__theme-switch theme-switch"
-              :class="{switch:isSwitch}" 
+              :class="{switch:!isDark}" 
               @click="switchTheme">
               <div class="theme-switch__circle"></div>
           </div>

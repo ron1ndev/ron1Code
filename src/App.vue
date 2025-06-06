@@ -1,13 +1,13 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted} from 'vue';
+import { useDesktopStore } from '@/store/desktop'
+const store = useDesktopStore()
 
-const themeMode = ref('dark')
+console.log(store.themeMode)
 
 onMounted(()=>{
-
-  document.documentElement.classList.add(`theme-${themeMode.value}`)
+  document.documentElement.classList.add(`theme-${store.themeMode}`)
 })
-
 
 </script>
 
