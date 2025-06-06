@@ -3,7 +3,18 @@ import Header from '@/components/header/header.vue';
 import Skills from '@/components/skills/skills.vue';
 import NeonBtn from '@/components/ui/neon-btn/neon-btn.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
+
+
+const vh  = ref(window.innerHeight * 0.01)
+
+const setVH = () =>{
+  vh.value = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh.value}px`)
+}
+
+
+
 
 const InitText = reactive({
   welcome:'Hello World',
@@ -44,6 +55,8 @@ const setText = (initKey,printKey,speed)=>{
 onMounted(()=>{
   setText('welcome','welcome', 200)
   setText('dev','dev', 100)
+  setVH()
+  window.addEventListener('resize', setVH)
 })
 
 onUnmounted(()=>{
@@ -51,7 +64,7 @@ onUnmounted(()=>{
   for(let key in idIntervals){
     clearInterval(idIntervals[key])
   }
-  
+  window.removeEventListener('resize', setVH)
 })
 
 </script>
