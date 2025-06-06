@@ -3,7 +3,7 @@ import {defineStore} from 'pinia'
 export const useDesktopStore = defineStore('desktop',{
 
   state:()=>({
-    isDarkTheme:true
+    isDarkTheme:true,
   }),
   getters:{
     themeMode(state){

@@ -38,6 +38,21 @@ defineProps({
     border-radius:8px;
     min-width: 216px;
     text-align: center;
+    animation: neon 5s ease-in-out infinite alternate;
+    border:1px solid var(--neon-bg);
+
+  }
+
+  @keyframes neon{
+    0% {
+      box-shadow: 0 0 5px var(--neon-bg), 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--neon-bg), 0 0 40px var(--neon-bg), 0 0 80px var(--neon-bg);
+    }
+    100% {
+      box-shadow: 0 0 5px var(--neon-bg), 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg);
+    }
   }
   a:hover {
     box-shadow: 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg), 0 0 80px var(--neon-bg);
