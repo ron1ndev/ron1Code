@@ -21,6 +21,9 @@ const switchTheme  = () =>{
 const switchLocal = ()=>{
    locale.value = locale.value === 'ru' ? 'en' : 'ru';
 }
+const openModal = ()=>{
+  store.changeVisibleModal(true)
+}
 
 
 watch(isDark,(val)=>{
@@ -69,7 +72,7 @@ watch(isDark,(val)=>{
                 <li class="header__item"><a class="header__link" href="#projects">{{ $t('menu.projects') }}</a></li>
                 <li class="header__item"><a class="header__link" href="#skills">{{ $t('menu.skills') }}</a></li>
                 <li class="header__item"><a class="header__link" href="#experience">{{ $t('menu.experience') }}</a></li>
-                <li class="header__item"><a class="header__link" href="#footer">{{ $t('menu.contacts') }}</a></li>
+                <li @click="openModal" class="header__item"><a class="header__link" href="#footer">{{ $t('menu.contacts') }}</a></li>
             </ul>
         </nav>
         <div class="header__options">

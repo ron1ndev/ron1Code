@@ -4,6 +4,7 @@ export const useDesktopStore = defineStore('desktop',{
 
   state:()=>({
     isDarkTheme:true,
+    isVisibleModal:false,
   }),
   getters:{
     themeMode(state){
@@ -13,6 +14,9 @@ export const useDesktopStore = defineStore('desktop',{
   actions:{
     changeTheme(newVal){
       this.isDarkTheme = newVal
+    },
+    changeVisibleModal(newVal){
+      this.isVisibleModal = newVal
     }
   }
 
