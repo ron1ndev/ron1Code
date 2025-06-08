@@ -5,6 +5,10 @@ const props = defineProps({
   isVisible:{
     type:Boolean,
     required:true
+  },
+  drawerClass:{
+    type:String,
+    default:null
   }
 })
 
@@ -20,6 +24,7 @@ const closeModal= ()=>{
 <template>
 
   <div class="drawer"
+  :class="drawerClass"
   @click.self="closeModal"
   v-if="isVisible">
       <div class="drawer__content">

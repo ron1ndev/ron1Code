@@ -1,7 +1,7 @@
 <script setup>
 import Loader from './components/loader/loader.vue';
-import Drawer from './components/drawer/drawer.vue';
-import { onMounted, onUnmounted, ref, computed} from 'vue';
+import ContactsModal from './components/modals/contacts-modal/contacts-modal.vue';
+import { onMounted, onUnmounted, ref} from 'vue';
 import { useDesktopStore } from '@/store/desktop'
 const store = useDesktopStore()
 
@@ -9,18 +9,20 @@ const isLoading = ref(true)
 
 let idInterval = null
 
-const isVisibleModal = computed(()=>{
-  return store.isVisibleModal
-})
-
-onMounted(()=>{
-  document.documentElement.classList.add(`theme-${store.themeMode}`)
-  window.addEventListener('load',()=>{
-    idInterval = setTimeout(()=>{
-        isLoading.value = false
-    },1000)
-  })
-})
+onMounted(() => {
+  document.documentElement.classList.add(`theme-${store.themeMode}`);
+  if (document.readyState === 'complete') {
+    idInterval = setTimeout(() => {
+      isLoading.value = false;
+    }, 1000);
+  } else {
+    window.addEventListener('load', () => {
+      idInterval = setTimeout(() => {
+        isLoading.value = false;
+      }, 1000);
+    });
+  }
+});
 
 onUnmounted(()=>{
   clearTimeout(idInterval)
@@ -34,8 +36,7 @@ onUnmounted(()=>{
 
      <template v-else>
         <router-view/>
-        <Drawer @close="store.changeVisibleModal(false)" :isVisible="isVisibleModal">
-        </Drawer>
+        <ContactsModal/>
      </template>
      
    </div>
