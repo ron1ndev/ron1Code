@@ -3,7 +3,7 @@ import Drawer from '@/components/drawer/drawer.vue';
 import TelegramIcon from '@/components/ui/neon-btn/icons/telegramIcon.vue';
 import GitIcon from '@/components/ui/neon-btn/icons/gitIcon.vue';
 import InstagramIcon from '@/components/ui/neon-btn/icons/instagramIcon.vue';
-import { computed } from 'vue';
+import { computed,ref,watch, nextTick } from 'vue';
 import { useDesktopStore } from '@/store/desktop';
 const store = useDesktopStore()
 
@@ -15,7 +15,19 @@ const closeModal = ()=>{
   store.changeVisibleModal(false)
 }
 
-const innerWidth = computed( () => store.innerWidth)
+const inputName = ref(null)
+
+const focus = () =>{
+  inputName.value.focus()
+}
+
+watch(isVisibleModal, async (newVal) => {
+
+  if(newVal){
+    await nextTick()
+    // focus()
+  }
+})
 
 </script>
 
@@ -32,12 +44,14 @@ const innerWidth = computed( () => store.innerWidth)
           <p class="contacts-modal__descr">Отправить сообщение на потчу</p>
         </div>
 
-        <form class="contacts-modal__form" action="#">
+        <form class="contacts-modal__form" action="#" autocomplete="off">
 
           <div class="contacts-modal__inputs">
-            <input class="contacts-modal__input" type="text" name="name" placeholder="Имя">
+            <input ref="inputName" class="contacts-modal__input" type="text" name="name" placeholder="Имя">
             <input class="contacts-modal__input" type="text" name="Email" placeholder="Email">
           </div>
+
+          <textarea class="contacts-modal__textarea" name="descr" placeholder="Сообщение"></textarea>
 
           <button class="contacts-modal__btn" type="submit">Отправить</button>
 
