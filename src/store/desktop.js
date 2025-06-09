@@ -5,6 +5,8 @@ export const useDesktopStore = defineStore('desktop',{
   state:()=>({
     isDarkTheme:true,
     isVisibleModal:false,
+    innerHeight:window.innerHeight,
+    innerWidth:window.innerWidth,
   }),
   getters:{
     themeMode(state){

@@ -53,11 +53,11 @@ const closeModal= ()=>{
   z-index: 100;
 
   &__content{
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    width: 600px;
-    height: 400px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 400px;
     background: rgba($color: #7a7a7a, $alpha: 0.1);
     color:#fff;
     border-radius:16px;
