@@ -7,6 +7,20 @@ body {
     background-color: var(--main-bg);
     font-family: #{$fontFamily};
 
+    &._lock{
+      overflow: hidden;
+      @media (min-width:768px) {
+
+        padding-right: 5px;
+        header{
+          padding-right: 6px;
+        }
+        .hero__social{
+          padding-right: 6px;
+        }
+      }
+    }
+
   &::-webkit-scrollbar {
     width: 6px;
     height: 6px;

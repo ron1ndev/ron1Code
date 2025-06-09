@@ -1,13 +1,21 @@
 <script setup>
 import Loader from './components/loader/loader.vue';
 import ContactsModal from './components/modals/contacts-modal/contacts-modal.vue';
-import { onMounted, onUnmounted, ref} from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch} from 'vue';
 import { useDesktopStore } from '@/store/desktop'
 const store = useDesktopStore()
 
 const isLoading = ref(true)
 
 let idInterval = null
+
+const isLockBody = computed(()=>store.isLockBody)
+
+watch(isLockBody,(newVal)=>{
+  const body = document.body
+  body.classList.toggle('_lock',newVal)
+})
+
 
 onMounted(() => {
   document.documentElement.classList.add(`theme-${store.themeMode}`);
@@ -26,6 +34,7 @@ onMounted(() => {
 
 onUnmounted(()=>{
   clearTimeout(idInterval)
+  document.body.classList.remove('_lock')
 })
 
 </script>

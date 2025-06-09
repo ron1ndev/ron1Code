@@ -5,6 +5,7 @@ export const useDesktopStore = defineStore('desktop',{
   state:()=>({
     isDarkTheme:true,
     isVisibleModal:false,
+    isLockBody:false,
     innerHeight:window.innerHeight,
     innerWidth:window.innerWidth,
   }),
@@ -19,7 +20,8 @@ export const useDesktopStore = defineStore('desktop',{
     },
     changeVisibleModal(newVal){
       this.isVisibleModal = newVal
-    }
+      this.isLockBody = newVal
+    },
   }
 
 })
