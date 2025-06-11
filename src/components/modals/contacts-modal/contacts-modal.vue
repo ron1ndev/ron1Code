@@ -23,12 +23,19 @@ const closeModal = ()=>{
 
 const mailText  = ref(null)
 
-const copyText = () =>{
+const copyText = async () =>{
   
   const text = mailText.value.textContent
 
-  navigator.clipboard.writeText(text)
-  
+  try{
+    await navigator.clipboard.writeText(text)
+    store.showSuccses()
+
+  }catch(e){
+    store.showErrors(e)
+    
+  }
+
 }
 
 
