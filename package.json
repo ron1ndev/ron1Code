@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "element-plus": "^2.10.1",
     "pinia": "^3.0.3",
     "vue": "^3.5.13",
     "vue-i18n": "^11.1.5",
