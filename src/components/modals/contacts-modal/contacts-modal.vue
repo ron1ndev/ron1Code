@@ -80,6 +80,10 @@ const handleBlur = (field) =>{
   validateField(field)
 }
 
+const handleFocus = (event) =>{
+  event.target.classList.remove('error')
+}
+
 const handleSendMail = async () => {
 
   validateForm()
@@ -123,7 +127,6 @@ watch(isVisibleModal, async (newVal) => {
   if(newVal){
     await nextTick()
     setInputElements()
-    focus()
   }
 })
 
@@ -149,11 +152,11 @@ onMounted(()=>{
         <form class="contacts-modal__form" action="https://formspree.io/f/meokgavb" method="post" autocomplete="off">
 
           <div class="contacts-modal__inputs">
-            <input @blur="handleBlur('name')" v-model="data.name" ref="inputName" class="contacts-modal__input" type="text" name="name" placeholder="Имя">
-            <input @blur="handleBlur('email')" v-model="data.email" ref="inputEmail" class="contacts-modal__input" type="email" name="email" placeholder="Email">
+            <input @focus="handleFocus" @blur="handleBlur('name')" v-model="data.name" ref="inputName" class="contacts-modal__input" type="text" name="name" placeholder="Имя">
+            <input @focus="handleFocus" @blur="handleBlur('email')" v-model="data.email" ref="inputEmail" class="contacts-modal__input" type="email" name="email" placeholder="Email">
           </div>
 
-          <textarea @blur="handleBlur('descr')" v-model="data.descr" ref="inputDescr" class="contacts-modal__textarea" name="descr" placeholder="Сообщение"></textarea>
+          <textarea @focus="handleFocus" @blur="handleBlur('descr')" v-model="data.descr" ref="inputDescr" class="contacts-modal__textarea" name="descr" placeholder="Сообщение"></textarea>
 
           <button class="contacts-modal__btn" type="submit" @click.prevent="handleSendMail">Отправить</button>
 
