@@ -144,6 +144,10 @@ onUnmounted(()=>{
 
     <MobileMenu/>
 
+    <div class="glow"></div>
+
+    <div class="glow2"></div>
+
   </main>
 </template>
 
