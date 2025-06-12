@@ -63,6 +63,11 @@
     @media (max-width:768px) {
     height: 40px;
     }
+
+    &.error{
+      border-color:#F4364C;
+      box-shadow:0px 0px 5px #F4364C;
+    }
   }
   &__textarea{
     color:#fff;
@@ -84,6 +89,11 @@
     &:focus{
       border-color:#03e9f4;
       box-shadow:0px 0px 5px #03e9f4;
+    }
+
+    &.error{
+      border-color:#F4364C;
+      box-shadow:0px 0px 5px #F4364C;
     }
   }
   &__btn{

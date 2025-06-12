@@ -3,25 +3,106 @@ import Drawer from '@/components/drawer/drawer.vue';
 import TelegramIcon from '@/components/ui/neon-btn/icons/telegramIcon.vue';
 import GitIcon from '@/components/ui/neon-btn/icons/gitIcon.vue';
 import InstagramIcon from '@/components/ui/neon-btn/icons/instagramIcon.vue';
-import { computed,ref,watch, nextTick } from 'vue';
+import { computed,ref,watch, nextTick, reactive , onMounted } from 'vue';
+import axios from 'axios';
 import { useDesktopStore } from '@/store/desktop';
 const store = useDesktopStore()
+
+const inputName = ref(null)
+const inputEmail = ref(null)
+const inputDescr = ref(null)
+
+const mailText  = ref(null)
+
+const data = reactive({
+  name:'',
+  descr:'',
+  email:''
+})
+
+const touched = reactive({
+  name:false,
+  email:false,
+  descr:false
+})
+
+const inputKeys = ['name','descr','email']
+let inputElems = {}
 
 const isVisibleModal = computed(()=>{
   return store.isVisibleModal
 })
 
-const inputName = ref(null)
+const closeModal = ()=>{
+  store.changeVisibleModal(false)
+}
 
 const focus = () =>{
   inputName.value.focus()
 }
 
-const closeModal = ()=>{
-  store.changeVisibleModal(false)
+const validateField = (key)=>{
+
+   const el = inputElems[key]
+   if (!el) return
+
+    if( data[key].trim() === '' && touched[key] ){
+      inputElems[key].classList.add('error')
+    }else{
+      inputElems[key].classList.remove('error')
+    }
 }
 
-const mailText  = ref(null)
+const validateForm  =  () => {
+ 
+ inputKeys.forEach(key=>{
+
+    if(!inputElems[key]) return
+
+    if( data[key].trim() === '' ){
+      inputElems[key].classList.add('error')
+    }else{
+      inputElems[key].classList.remove('error')
+    }
+ })
+}
+
+const setInputElements = () =>{
+  inputElems = {
+    name:inputName.value,
+    email:inputEmail.value,
+    descr:inputDescr.value,
+  }
+}
+
+const handleBlur = (field) =>{
+  touched[field] = true
+  validateField(field)
+}
+
+const handleSendMail = async () => {
+
+  validateForm()
+
+  if(data.name === '' || data.email === '' || data.descr === '') return
+
+
+  try{
+
+    await axios.post('https://formspree.io/f/meokgavb',{data},)
+
+    data.name = ''
+    data.email = ''
+    data.descr = ''
+
+    store.showSuccses('Сообщение отправлено!')
+
+  }catch(e){
+   store.showErrors(e)
+  }
+  
+
+}
 
 const copyText = async () =>{
   
@@ -29,22 +110,25 @@ const copyText = async () =>{
 
   try{
     await navigator.clipboard.writeText(text)
-    store.showSuccses()
+    store.showSuccses('Успешно скопировано!')
 
   }catch(e){
     store.showErrors(e)
     
   }
-
 }
-
 
 watch(isVisibleModal, async (newVal) => {
 
   if(newVal){
     await nextTick()
-    // focus()
+    setInputElements()
+    focus()
   }
+})
+
+onMounted(()=>{
+ setInputElements()
 })
 
 </script>
@@ -62,25 +146,25 @@ watch(isVisibleModal, async (newVal) => {
           <p class="contacts-modal__descr">Отправить сообщение на потчу</p>
         </div>
 
-        <form class="contacts-modal__form" action="#" autocomplete="off">
+        <form class="contacts-modal__form" action="https://formspree.io/f/meokgavb" method="post" autocomplete="off">
 
           <div class="contacts-modal__inputs">
-            <input ref="inputName" class="contacts-modal__input" type="text" name="name" placeholder="Имя">
-            <input class="contacts-modal__input" type="text" name="Email" placeholder="Email">
+            <input @blur="handleBlur('name')" v-model="data.name" ref="inputName" class="contacts-modal__input" type="text" name="name" placeholder="Имя">
+            <input @blur="handleBlur('email')" v-model="data.email" ref="inputEmail" class="contacts-modal__input" type="email" name="email" placeholder="Email">
           </div>
 
-          <textarea class="contacts-modal__textarea" name="descr" placeholder="Сообщение"></textarea>
+          <textarea @blur="handleBlur('descr')" v-model="data.descr" ref="inputDescr" class="contacts-modal__textarea" name="descr" placeholder="Сообщение"></textarea>
 
-          <button class="contacts-modal__btn" type="submit">Отправить</button>
+          <button class="contacts-modal__btn" type="submit" @click.prevent="handleSendMail">Отправить</button>
 
         </form>
 
         <div class="contacts-modal__footer">
           <div class="contacts-modal__social">
-            <a href="#" target="_blank" class="contacts-modal__social-icon">
+            <a href="https://t.me/R_0N11" target="_blank" class="contacts-modal__social-icon">
               <TelegramIcon/>
             </a>
-            <a href="#" target="_blank" class="contacts-modal__social-icon">
+            <a href="https://github.com/ron1ndev" target="_blank" class="contacts-modal__social-icon">
               <GitIcon/>
             </a>
             <a href="#" target="_blank" class="contacts-modal__social-icon">

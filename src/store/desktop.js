@@ -23,7 +23,8 @@ export const useDesktopStore = defineStore('desktop',{
       this.isVisibleModal = newVal
       this.isLockBody = newVal
     },
-    showSuccses(){
+    showSuccses(message = 'Успешно'){
+
       Swal.fire({
         position: "top-end",
         showConfirmButton: false,
@@ -35,7 +36,7 @@ export const useDesktopStore = defineStore('desktop',{
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#0f0f0f">
             <path d="M9 16.2l-4.2-4.2L3 13.8l6 6 12-12-1.8-1.8z"/>
           </svg>
-          <span>Успешно скопировано!</span>
+          <span>${message}</span>
         </div>
       `,               
         customClass: {
