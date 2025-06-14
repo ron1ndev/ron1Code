@@ -2,6 +2,7 @@
 import { computed, watch } from 'vue'
 import { useDesktopStore } from '@/store/desktop';
 import { useI18n } from 'vue-i18n';
+import { RouterLink } from 'vue-router';
 
 const { locale } = useI18n();
 const store = useDesktopStore()
@@ -68,9 +69,9 @@ watch(isDark,(val)=>{
         </div>
         <nav class="header__menu">
             <ul class="header__list">
-                <!-- <li class="header__item"><a class="header__link" href="#">Главная</a></li> -->
+                <li class="header__item"><RouterLink to="/" class="header__link" href="#">Главная</RouterLink></li>
                 <li class="header__item"><a class="header__link" href="#projects">{{ $t('menu.projects') }}</a></li>
-                <li class="header__item"><a class="header__link" href="#skills">{{ $t('menu.skills') }}</a></li>
+                <li class="header__item"><RouterLink to="/skills" class="header__link" >{{ $t('menu.skills') }}</RouterLink></li>
                 <li class="header__item"><a class="header__link" href="#experience">{{ $t('menu.experience') }}</a></li>
                 <li @click.stop="openModal" class="header__item"><a class="header__link">{{ $t('menu.contacts') }}</a></li>
             </ul>

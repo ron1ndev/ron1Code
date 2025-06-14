@@ -136,7 +136,7 @@ main{
   background-size: 200% 200%; /* Увеличиваем размер для анимации */
   -webkit-background-clip: text; /* Используем градиент как заливку для текста */
   -webkit-text-fill-color: transparent; /* Делаем текст прозрачным, чтобы был виден только градиент */
-  animation: gradientFlow 3s infinite linear;
+  animation: gradientFlow 2s infinite linear;
 }
 
 @keyframes gradientFlow {
