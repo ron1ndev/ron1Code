@@ -5,6 +5,17 @@ import NeonBtn from '@/components/ui/neon-btn/neon-btn.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import { onMounted, onUnmounted, reactive, ref } from 'vue';
 
+const skills = [
+  {file:'1.png',name:'CSS 3',alt:'CSS 3'},
+  {file:'2.png',name:'HTML 5',alt:'HTML 5'},
+  {file:'3.png',name:'JavaScript',alt:'JavaScript'},
+  {file:'4.1.png',name:'React',alt:'React'},
+  {file:'8.png',name:'Vue',alt:'Vue'},
+  {file:'5.png',name:'Git',alt:'Git'},
+  {file:'9.svg',name:'Vite',alt:'Vite'},
+  {file:'6.png',name:'Gulp',alt:'Gulp'},
+  // {path:'/src/assets/img/skills/7.png',name:'Webpack',alt:'Webpack'},
+]
 
 const vh  = ref(window.innerHeight * 0.01)
 
@@ -140,7 +151,8 @@ onUnmounted(()=>{
 
     </div>
 
-    <Skills/>
+    <Skills
+    :skills="skills"/>
 
     <MobileMenu/>
 

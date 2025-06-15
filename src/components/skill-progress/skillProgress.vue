@@ -15,27 +15,27 @@ const bars = [
   {
     icon: icon1,
     color: '#FFD600',
-    length: '400px',
+    length: '400',
   },
   {
     icon: icon2,
     color: '#FF8002',
-    length: '439px',
+    length: '439',
   },
   {
     icon: icon3,
     color: '#039BE5',
-    length: '481px',
+    length: '481',
   },
   {
     icon: icon4,
     color: '#23DA9A',
-    length: '447px',
+    length: '447',
   },
   {
     icon: icon5,
     color: '#E53D0A',
-    length: '373px',
+    length: '373',
   },
 ];
 </script>

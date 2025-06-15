@@ -11,20 +11,26 @@ const props = defineProps({
   }
 })
 
-let progressBar = ref(null)
-let idInterval = ref(null)
+const rest = (props.bar.length / 533) * 100
 
-onMounted(()=>{
-  idInterval.value = setTimeout(()=>{
-    const bar = progressBar.value
-    bar.style.maxWidth = props.bar.length
-  },3000)
+console.log(rest)
 
-})
 
-onUnmounted(()=>{
-  clearTimeout(idInterval)
-})
+
+// let progressBar = ref(null)
+// let idInterval = ref(null)
+
+// onMounted(()=>{
+//   idInterval.value = setTimeout(()=>{
+//     const bar = progressBar.value
+//     bar.style.maxWidth = props.bar.length
+//   },3000)
+
+// })
+
+// onUnmounted(()=>{
+//   clearTimeout(idInterval)
+// })
 
 
 </script>
@@ -34,7 +40,8 @@ onUnmounted(()=>{
   <div class="SkillProgressItem progress-item"
   :style="{
     '--barColor':bar.color,
-    '--barWidth':bar.length
+    '--barWidth':`${bar.length}px`,
+    '--restWidth':`${rest}%`
   }">
     <div class="progress-item__icon"><img :src="bar.icon" alt="js"></div>
     <div class="progress-item__bar">

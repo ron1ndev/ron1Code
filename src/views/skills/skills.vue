@@ -1,6 +1,19 @@
 <script setup>
 import Header from '@/components/header/header.vue';
 import SkillProgress from '@/components/skill-progress/skillProgress.vue';
+import Skills from '@/components/skills/skills.vue';
+
+const skills = [
+  {file:'10.png',name:'CSS 3',alt:'CSS 3'},
+  {file:'11.png',name:'HTML 5',alt:'HTML 5'},
+  {file:'12.png',name:'JavaScript',alt:'JavaScript'},
+  {file:'13.png',name:'React',alt:'React'},
+  {file:'14.png',name:'Vue',alt:'Vue'},
+  {file:'15.png',name:'Git',alt:'Git'},
+  {file:'16.png',name:'Vite',alt:'Vite'},
+  {file:'17.png',name:'Gulp',alt:'Gulp'},
+]
+
 const codeIcon = '</>'
 </script>
 
@@ -10,6 +23,7 @@ const codeIcon = '</>'
       <section class="skills" id="skills">
         <div class="skills__main-content">
           <div class="skills__left">
+            <div class="skills__title-section">Последний проект</div>
 
             <div class="skills__card-last-project last-poject">
               <div class="last-poject__header">
@@ -39,11 +53,19 @@ const codeIcon = '</>'
             </div>
 
           </div>
-          <SkillProgress/>
+          <div class="skills__right">
+            <div class="skills__title-section">Main stack</div>
+            <SkillProgress/>
+          </div>
         </div>
+      <div class="skills__main-content-bottom">
+        <div class="skills__title-section">Base stack</div>
+        <Skills
+          :skills="skills"/>
+      </div>
       </section>
   </main>
 </template>
 
 
-<style src="./style.scss" lang="scss" scoped></style>
+<style src="./style.scss" lang="scss"></style>

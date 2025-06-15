@@ -17,7 +17,7 @@
     max-width: 533px;
     height: 32px;
     background: #FFFFFF;
-    border-radius:8px;
+    border-radius:10px;
     box-shadow:0px 0px 20px 0px var(--barColor);
     overflow: hidden;
   }
@@ -31,11 +31,12 @@
     
   }
   &__progress{
-    width: 100%;
+    width: var(--restWidth);
     max-width: 2px;
     background: var(--barColor);
     height: 100%;
-    border-radius:8px;
-    animation: fillBar linear 3s;
+    border-top-right-radius:8px;
+    border-bottom-right-radius:8px;
+    animation: fillBar ease-out 3s forwards;
   }
 }
