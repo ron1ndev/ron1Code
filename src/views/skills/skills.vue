@@ -2,6 +2,13 @@
 import Header from '@/components/header/header.vue';
 import SkillProgress from '@/components/skill-progress/skillProgress.vue';
 import Skills from '@/components/skills/skills.vue';
+import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
+import { useDesktopStore } from '@/store/desktop';
+const store = useDesktopStore()
+
+const innerWidth = store.innerWidth
+
+console.log(innerWidth)
 
 const skills = [
   {file:'10.png',name:'CSS 3',alt:'CSS 3'},
@@ -53,6 +60,9 @@ const codeIcon = '</>'
             </div>
 
           </div>
+          <Skills
+          v-if="innerWidth<992"
+          :skills="skills"/>
           <div class="skills__right">
             <div class="skills__title-section">Main stack</div>
             <SkillProgress/>
@@ -61,9 +71,11 @@ const codeIcon = '</>'
       <div class="skills__main-content-bottom">
         <div class="skills__title-section">Base stack</div>
         <Skills
+        v-if="innerWidth>992"
           :skills="skills"/>
       </div>
       </section>
+      <MobileMenu/>
   </main>
 </template>
 
