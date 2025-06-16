@@ -60,9 +60,6 @@ const codeIcon = '</>'
             </div>
 
           </div>
-          <Skills
-          v-if="innerWidth<992"
-          :skills="skills"/>
           <div class="skills__right">
             <div class="skills__title-section">Main stack</div>
             <SkillProgress/>
@@ -71,7 +68,6 @@ const codeIcon = '</>'
       <div class="skills__main-content-bottom">
         <div class="skills__title-section">Base stack</div>
         <Skills
-        v-if="innerWidth>992"
           :skills="skills"/>
       </div>
       </section>

@@ -44,32 +44,15 @@ watch(isDark,(val)=>{
 <template>
   <header class="header" id="header">
     <div class="header__content _container">
-        <div class="header__logo logo">
-            <div class="logo__title"><a href="https://github.com/ron1ndev" target="_blank">GitHub</a></div>
-            <div class="logo__icon">
-                <a href="https://github.com/ron1ndev" target="_blank">
-                    <svg class="logo__icon-svg" width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                          <linearGradient id="hover-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color: rgba(255,128,2,1); stop-opacity: 1;" />
-                            <stop offset="100%" style="stop-color: rgba(253,18,132,1); stop-opacity: 1;" />
-                          </linearGradient>
-                        </defs>
-                        
-                        <path
-                          class="logo__icon-path"
-                          fill="currentColor"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M32.0265 0C14.3167 0 0 14.6666 0 32.8112C0 47.3151 9.17318 59.5924 21.8988 63.9377C23.4898 64.2644 24.0726 63.2317 24.0726 62.3631C24.0726 61.6024 24.0202 58.9951 24.0202 56.2784C15.1112 58.2344 13.256 52.3671 13.256 52.3671C11.8242 48.5645 9.70287 47.5871 9.70287 47.5871C6.78696 45.5771 9.91527 45.5771 9.91527 45.5771C13.1498 45.7945 14.847 48.9451 14.847 48.9451C17.7098 53.9424 22.323 52.5304 24.1788 51.6611C24.4437 49.5425 25.2926 48.0758 26.194 47.2611C19.0884 46.5005 11.6125 43.6758 11.6125 31.0725C11.6125 27.4872 12.8843 24.5539 14.8995 22.2726C14.5815 21.4579 13.4677 18.0893 15.2181 13.5806C15.2181 13.5806 17.9222 12.7113 24.0195 16.9486C26.63 16.2304 29.3222 15.865 32.0265 15.8619C34.7306 15.8619 37.4873 16.2426 40.0328 16.9486C46.1307 12.7113 48.8349 13.5806 48.8349 13.5806C50.5852 18.0893 49.4708 21.4579 49.1528 22.2726C51.2211 24.5539 52.4405 27.4872 52.4405 31.0725C52.4405 43.6758 44.9645 46.4458 37.8058 47.2611C38.9727 48.2931 39.9797 50.2485 39.9797 53.3451C39.9797 57.7451 39.9272 61.2764 39.9272 62.3624C39.9272 63.2317 40.5107 64.2644 42.101 63.9384C54.8267 59.5917 63.9999 47.3151 63.9999 32.8112C64.0523 14.6666 49.6832 0 32.0265 0Z"
-                        />
-                      </svg>
-            </a>
-            </div>
-        </div>
+       <RouterLink to="/">
+          <div class="header__logo logo">
+              <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 0.5C16.4043 0.500079 16.7958 0.636048 17.0859 0.889648L31.1025 13.1396H31.1035C31.3895 13.389 31.5065 13.6888 31.5 13.9717C31.4934 14.2579 31.3587 14.5685 31.0635 14.8262C30.446 15.3641 29.5328 15.3883 28.96 14.8877L28.3623 14.3652L27.5332 13.6406V26.25C27.5332 26.88 26.9263 27.5 26.0303 27.5H18.5215V20.5H13.5166V27.5H6.00684C5.11077 27.5 4.50391 26.88 4.50391 26.25V13.6055L3.6748 14.3311L2.99121 14.9287C2.42905 15.42 1.56673 15.3802 0.935547 14.8271V14.8262L0.832031 14.7275C0.60883 14.4916 0.505609 14.2229 0.5 13.9727C0.493712 13.6898 0.610064 13.3891 0.895508 13.1387L0.896484 13.1396L14.9131 0.889648C15.2033 0.635974 15.5955 0.5 16 0.5Z" fill="currentColor" stroke="currentColor"/>
+            </svg>
+          </div>
+        </RouterLink>
         <nav class="header__menu">
             <ul class="header__list">
-                <li class="header__item"><RouterLink to="/" class="header__link" href="#">Главная</RouterLink></li>
                 <li class="header__item"><a class="header__link" href="#projects">{{ $t('menu.projects') }}</a></li>
                 <li class="header__item"><RouterLink to="/skills" class="header__link" >{{ $t('menu.skills') }}</RouterLink></li>
                 <li class="header__item"><a class="header__link" href="#experience">{{ $t('menu.experience') }}</a></li>
