@@ -16,14 +16,14 @@ export const useDesktopStore = defineStore('desktop',{
     }
   },
   actions:{
-    changeTheme(newVal){
+    changeTheme(newVal:boolean):void{
       this.isDarkTheme = newVal
     },
-    changeVisibleModal(newVal){
+    changeVisibleModal(newVal:boolean):void{
       this.isVisibleModal = newVal
       this.isLockBody = newVal
     },
-    showSuccses(message = 'Успешно'){
+    showSuccses(message:string = 'Успешно'):void{
 
       Swal.fire({
         position: "top-end",
@@ -46,7 +46,7 @@ export const useDesktopStore = defineStore('desktop',{
         } 
       });
     },
-    showErrors(e){
+    showErrors(e:unknown):void{
       Swal.fire({
         position: "top-end",
         showConfirmButton: false,
