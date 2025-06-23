@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import skillProgressItem from '../skill-progress-item/skillProgressItem.vue';
 defineOptions({
   name:"SkillProgress"
@@ -10,32 +10,36 @@ import icon3 from '@/assets/img/skills/1.png'
 import icon4 from '@/assets/img/skills/8.png'
 import icon5 from '@/assets/img/skills/5.png'
 
-
-const bars = [
+type Bar = {
+  icon: string,
+  color: string,
+  length: number,
+}
+const bars:Bar[] = [
   {
     icon: icon1,
     color: '#FFD600',
-    length: '400',
+    length: 400,
   },
   {
     icon: icon2,
     color: '#FF8002',
-    length: '439',
+    length: 439,
   },
   {
     icon: icon3,
     color: '#039BE5',
-    length: '481',
+    length: 481,
   },
   {
     icon: icon4,
     color: '#23DA9A',
-    length: '447',
+    length: 447,
   },
   {
     icon: icon5,
     color: '#E53D0A',
-    length: '373',
+    length: 373,
   },
 ];
 </script>
@@ -44,8 +48,8 @@ const bars = [
 
   <div class="SkillProgress">
     <skillProgressItem
-    v-for="(bar,index) in bars"
-    :key="index"
+    v-for="bar in bars"
+    :key="bar.icon"
     :bar="bar"
     />
   </div>

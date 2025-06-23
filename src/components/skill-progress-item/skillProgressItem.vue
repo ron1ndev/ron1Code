@@ -1,37 +1,21 @@
-<script setup>
-import { ref, onMounted, onUnmounted, defineProps } from 'vue';
+<script setup lang="ts">
+import { defineProps } from 'vue';
 defineOptions({
   name:"SkillProgressItem"
 })
 
-const props = defineProps({
-  bar:{
-    type:Object,
-    require:true
-  }
-})
+type Bar = {
+  icon: string,
+  color: string,
+  length: number,
+}
+type Props = {
+  bar: Bar
+}
 
-const rest = (props.bar.length / 533) * 100
+const { bar } = defineProps<Props>()
 
-console.log(rest)
-
-
-
-// let progressBar = ref(null)
-// let idInterval = ref(null)
-
-// onMounted(()=>{
-//   idInterval.value = setTimeout(()=>{
-//     const bar = progressBar.value
-//     bar.style.maxWidth = props.bar.length
-//   },3000)
-
-// })
-
-// onUnmounted(()=>{
-//   clearTimeout(idInterval)
-// })
-
+const rest:number = (bar.length / 533) * 100
 
 </script>
 
