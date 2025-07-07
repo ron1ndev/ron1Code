@@ -1,49 +1,60 @@
 <script setup>
 import Header from '@/components/header/header.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
-import { onMounted, nextTick } from 'vue';
+import ExperienceItem from '../experience/experience-item/experience-item.vue'
 
-
-
-
-
-
-
-
-onMounted( async () =>{
-  await nextTick()
-
-  const experienceItem = document.querySelectorAll('.experience__item');
-
-
-  console.log(experienceItem)
-
-
-
-    const observer2 = new IntersectionObserver((entries,observer)=>{
-    entries.forEach(({ isIntersecting,target })=>{
-      if(isIntersecting){
-
-        experienceItem.forEach(item=>{
-          if(item===target){
-            item.querySelector('.item-experience__info').classList.add('active');
-            item.querySelector('.item-experience__year').classList.add('active');
-            item.querySelector('.test').classList.add('active2')  
-          }
-        })
-      }
-    })
-  },{
-    threshold:1
-  })
-
-
-  experienceItem.forEach(item=>{
-    observer2.observe(item)
-  })
-})
-
-
+const experiences = [
+  {
+    subtitle: 'Фриланс',
+    title:'Верстальщик',
+    items:[
+      'Вёрстка и редизайн отдельных страниц для сайта университета.',
+      'Верстка адаптивных лендингов под заказ'
+    ],
+    year: '2020',
+  },
+  {
+    subtitle: 'Компания Sima-land',
+    title:'Верстальщик',
+    items:[
+      'Разработка и поддержка адаптивных писем и лендингов с использованием HTML/CSS/JS.',
+      'Верстка и доработка лендингов на основе макетов, включая адаптацию под мобильные устройства.',
+      'Настройка и интеграция автоматических писем с платформами рассылок.',
+      'Тестирование кросс-браузерной и кросс-клиентской совместимости.',
+    ],
+    year: '2021',
+  },
+  {
+    subtitle: 'Компания Sima-land',
+    title:'Технический специалист CRM маркетинга',
+    items:[
+      'Составление ТЗ для разработчиков 1С и интеграция систем.',
+      'Ведение проектов по интеграции email, push и SMS-рассылок.',
+      'Сегментация клиентской базы для персонализированных рассылок.',
+      'Разработка и поддержка автоматических писем и уведомлений.',
+      'Настройка сценариев рассылок и динамического контента через платформу Mindbox',
+      'Интеграция с API для автоматизации рассылок и данных.',
+      'Взаимодействие с разработчиками и менеджерами проектов.',
+    ],
+    year: '2022-2024',
+  },
+  {
+    subtitle: 'Web-студия ИП Обоскалов',
+    title:'Web-разработчик Vue.js',
+    items:[
+      'Разработка адаптивных веб-приложений, интернет-магазинов, корпоративных и бизнес сайтов',
+      'Разработка компонентов с использованием Vue.js',
+      'Интеграция frontend-приложений с REST API',
+      'Работа с системами управления версиями (Git, GitHub)',
+      'Настройка маршрутизации и состояния приложения (Vue Router, Pinia, Vuex)',
+      'Создание адаптивных интерфейсов под десктоп, планшеты и мобильные устройства',
+      'Интеграция с CMS: WordPress, Bitrix',
+      'Работа с Node.js и Express для разработки простых API',
+    ],
+    year: '2024 - 2025',
+    isCurrent:true,
+  }
+]
 
 </script>
 
@@ -53,75 +64,10 @@ onMounted( async () =>{
       <section class="experience" id="experience">
           <div class="experience__content _container">
               <div class="experience__chapter chapter-experience">
-                  <div class="experience__item item-experience">
-                      <div class="item-experience__info info-experience">
-                          <div class="info-experience__subtitle">Фриланс</div>
-                          <div class="info-experience__title">Верстальщик</div>
-                          
-                          <ul class="info-experience__list">
-                              <li class="info-experience__item">Вёрстка и редизайн отдельных страниц для сайта университета.</li>
-                              <li class="info-experience__item">Верстка адаптивных лендингов под заказ</li>
-                          </ul>
-                          <div class="info-experience__year">2020 г.</div>
-                      </div>
-                      <div class="test">
-                          <div class="item-experience__img">
-                              <img src="/public/ex.png" alt="icon">
-                          </div>
-                  </div>
-                      <div class="item-experience__year">
-                          2020 г.
-                      </div>
-                  </div>
-                  <div class="experience__item experience__item-reverse  item-experience">
-                      <div class="item-experience__info info-experience info-experience-reverse">
-                          <div class="info-experience__subtitle">Компания Sima-land </div>
-                          <div class="info-experience__title">Верстальщик</div>
-                          
-                          <ul class="info-experience__list">
-                              <li class="info-experience__item">Разработка и поддержка адаптивных писем и лендингов с использованием HTML/CSS/JS.</li>
-                              <li class="info-experience__item">Верстка и доработка лендингов на основе макетов, включая адаптацию под мобильные устройства.</li>
-                              <li class="info-experience__item">Настройка и интеграция автоматических писем с платформами рассылок.</li>
-                              <li class="info-experience__item">Тестирование кросс-браузерной и кросс-клиентской совместимости.</li>
-                          </ul>
-                          <div class="info-experience__year">2021 г.</div>
-                      </div>
-                      <div class="test test2">
-                          <div class="item-experience__img">
-                              <img src="/public/ex.png" alt="icon">
-                          </div>
-                  </div>
-                      <div class="item-experience__year item-experience__year-reverse">
-                          2021 г.
-                      </div>
-                  </div>
-                  <div class="experience__item  item-experience">
-                      <div class="item-experience__info info-experience">
-                          <div class="info-experience__subtitle">Компания Sima-land </div>
-                          <div class="info-experience__title">Технический специалист
-                              CRM маркетинга</div>
-                              
-                          <ul class="info-experience__list">
-                              <li class="info-experience__item">Составление ТЗ для разработчиков 1С и интеграция систем.</li>
-                              <li class="info-experience__item">Ведение проектов по интеграции email, push и SMS-рассылок.</li>
-                              <li class="info-experience__item">Сегментация клиентской базы для персонализированных рассылок.</li>
-                              <li class="info-experience__item">Разработка и поддержка автоматических писем и уведомлений.</li>
-                              <li class="info-experience__item">Настройка сценариев рассылок и динамического контента через платформу Mindbox</li>
-                              <li class="info-experience__item">Интеграция с API для автоматизации рассылок и данных.</li>
-                                  <li class="info-experience__item">Взаимодействие с разработчиками и менеджерами проектов.</li>
-                          </ul>
-                          <div class="info-experience__year">2022-2024 г.</div>
-                      </div>
-                      <div class="test">
-                      <div class="item-experience__img">
-                          <img src="/public/ex.png" alt="icon">
-                      </div>
-                  </div>
-                      <div class="item-experience__year">
-                          2022-2024 г.
-                      </div>
-                  </div>
-                    
+
+                <ExperienceItem v-for="(item,index) in experiences.reverse()" :key="item.year + index"
+                :experience="item"
+                :index="index"/>                    
               </div>
           </div>
       </section>
