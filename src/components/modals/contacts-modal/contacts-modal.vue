@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Drawer from '@/components/drawer/drawer.vue';
 import TelegramIcon from '@/components/ui/neon-btn/icons/telegramIcon.vue';
 import GitIcon from '@/components/ui/neon-btn/icons/gitIcon.vue';
@@ -8,52 +8,69 @@ import axios from 'axios';
 import { useDesktopStore } from '@/store/desktop';
 const store = useDesktopStore()
 
-const inputName = ref(null)
-const inputEmail = ref(null)
-const inputDescr = ref(null)
+const inputName = ref<HTMLInputElement | null>(null)
+const inputEmail = ref<HTMLInputElement | null>(null)
+const inputDescr = ref<HTMLInputElement | null>(null)
 
-const mailText  = ref(null)
+const mailText  = ref<HTMLInputElement | null>(null)
 
-const data = reactive({
+type Form  = {
+  name:string,
+  descr:string,
+  email:string
+}
+
+const data = reactive<Form>({
   name:'',
   descr:'',
   email:''
 })
 
-const touched = reactive({
+type TouchForm = {
+  name:boolean,
+  email:boolean,
+  descr:boolean
+}
+
+const touched = reactive<TouchForm>({
   name:false,
   email:false,
   descr:false
 })
 
-const inputKeys = ['name','descr','email']
-let inputElems = {}
+const inputKeys:Array<keyof Form> = ['name','descr','email']
 
-const isVisibleModal = computed(()=>{
+let inputElems: Record<string,HTMLInputElement | null>= {
+  name: null,
+  descr: null,
+  email: null
+}
+
+const isVisibleModal = computed<boolean>(()=>{
   return store.isVisibleModal
 })
 
-const closeModal = ()=>{
+const closeModal = ():void => {
   store.changeVisibleModal(false)
 }
 
-const focus = () =>{
-  inputName.value.focus()
+const focus = ():void =>{
+  inputName.value?.focus()
 }
 
-const validateField = (key)=>{
+const validateField = (key:keyof Form):void=>{
 
    const el = inputElems[key]
    if (!el) return
 
     if( data[key].trim() === '' && touched[key] ){
-      inputElems[key].classList.add('error')
+      el.classList.add('error')
     }else{
-      inputElems[key].classList.remove('error')
+      el.classList.remove('error')
     }
 }
 
-const validateForm  =  () => {
+const validateForm  =  ():void => {
  
  inputKeys.forEach(key=>{
 
@@ -75,13 +92,14 @@ const setInputElements = () =>{
   }
 }
 
-const handleBlur = (field) =>{
+const handleBlur = (field:keyof TouchForm):void =>{
   touched[field] = true
   validateField(field)
 }
 
-const handleFocus = (event) =>{
-  event.target.classList.remove('error')
+const handleFocus = (event: FocusEvent): void => {
+  const target = event.target as HTMLInputElement
+  target.classList.remove('error')
 }
 
 const handleSendMail = async () => {
@@ -110,7 +128,7 @@ const handleSendMail = async () => {
 
 const copyText = async () =>{
   
-  const text = mailText.value.textContent
+  const text = mailText.value?.textContent || ''
 
   try{
     await navigator.clipboard.writeText(text)
@@ -122,7 +140,7 @@ const copyText = async () =>{
   }
 }
 
-watch(isVisibleModal, async (newVal) => {
+watch(isVisibleModal, async (newVal:boolean) => {
 
   if(newVal){
     await nextTick()

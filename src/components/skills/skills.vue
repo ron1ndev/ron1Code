@@ -41,7 +41,7 @@ newSkills.forEach(skill => {
                 </li>
             </ul>
              <ul class="skills__list">
-                <li class="skills__item" v-for="skill in skills">
+                <li class="skills__item" v-for="skill in newSkills">
                     <div class="skills__img"><img :src="skill.path" :alt="skill.alt"></div>
                     <div class="skills__name">{{ skill.name }}</div>
                 </li>
