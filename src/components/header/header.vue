@@ -59,9 +59,9 @@ watch(isDark,(val)=>{
         </RouterLink>
         <nav class="header__menu">
             <ul class="header__list">
-                <li class="header__item"><a class="header__link" href="#projects">{{ $t('menu.projects') }}</a></li>
+                <li class="header__item" :class="{'active':currenRouter === '/projects'}"><RouterLink to="/projects" class="header__link" href="#projects">{{ $t('menu.projects') }}</RouterLink></li>
                 <li class="header__item" :class="{'active':currenRouter === '/skills'}"><RouterLink to="/skills" class="header__link" >{{ $t('menu.skills') }}</RouterLink></li>
-                <li class="header__item"><a class="header__link" href="#experience">{{ $t('menu.experience') }}</a></li>
+                <li class="header__item" :class="{'active':currenRouter === '/Experience'}"><RouterLink to="/Experience" class="header__link" href="#experience">{{ $t('menu.experience') }}</RouterLink></li>
                 <li @click.stop="openModal" class="header__item"><a class="header__link">{{ $t('menu.contacts') }}</a></li>
             </ul>
         </nav>

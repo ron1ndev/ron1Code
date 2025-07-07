@@ -8,8 +8,6 @@ const store = useDesktopStore()
 
 const innerWidth = store.innerWidth
 
-console.log(innerWidth)
-
 const skills = [
   {file:'10.png',name:'CSS 3',alt:'CSS 3'},
   {file:'11.png',name:'HTML 5',alt:'HTML 5'},
