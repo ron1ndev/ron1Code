@@ -1,0 +1,37 @@
+.sidebar-view{
+  width: 250px;
+  height: 300px;
+  background: rgba($color: #656565, $alpha: 0.1);
+  border-radius: 16px;
+  border: 2px solid #1A1D24;
+  padding: 20px;
+  &__name-project{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  &__type-project{
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 16px;
+  }
+  &__descr-project{
+    font-size: 11px;
+    line-height: 16px;
+    margin-bottom: 34px;
+  }
+  &__technology-list{
+    display: flex;
+    gap: 10px;
+    
+  }
+  &__technology-item{
+    width: 24px;
+    height: 24px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

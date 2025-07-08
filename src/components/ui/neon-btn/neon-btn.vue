@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 type Props = {
   background:string
@@ -9,10 +9,16 @@ const props = withDefaults(defineProps<Props>(),{
   background:'#03e9f4'
 })
 
+const emits = defineEmits(['handleClick'])
+
+const handleClick = () =>{
+    emits('handleClick')
+}
+
 </script>
 
 <template>
-  <div class="neon-btn" :style="{'--neon-bg':props.background}">
+  <div class="neon-btn" :style="{'--neon-bg':props.background}" @click="handleClick">
     <a href="#">
      <slot></slot>
     </a>

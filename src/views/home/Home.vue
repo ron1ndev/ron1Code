@@ -4,6 +4,9 @@ import Skills from '@/components/skills/skills.vue';
 import NeonBtn from '@/components/ui/neon-btn/neon-btn.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import { onMounted, onUnmounted, reactive, ref } from 'vue';
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const skills = [
   {file:'1.png',name:'CSS 3',alt:'CSS 3'},
@@ -23,6 +26,7 @@ const setVH = () =>{
   vh.value = window.innerHeight * 0.01
   document.documentElement.style.setProperty('--vh', `${vh.value}px`)
 }
+
 
 
 
@@ -61,6 +65,10 @@ const setText = (initKey,printKey,speed)=>{
 
   },speed)
 
+}
+
+const openProjects = () =>{
+  router.push('/projects')
 }
 
 onMounted(()=>{
@@ -145,6 +153,7 @@ onUnmounted(()=>{
     <div class="hero__btns">
       <NeonBtn
       background="#03e9f4"
+      @handleClick="openProjects"
       >
       {{ $t('hero.btn') }}
      </NeonBtn>
