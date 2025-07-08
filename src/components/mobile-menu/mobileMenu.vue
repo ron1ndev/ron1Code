@@ -56,7 +56,7 @@ const menuLinks = [
   <nav class="header__menu-mobile menu-mobile">
     <ul class="menu-mobile__list">
         <li class="menu-mobile__item" :class="{'active':item.slug===currentRouter}" v-for="(item,index) in menuLinks" :key="index" @click="item.link?.()">
-            <div class="menu-mobile__icon" v-html="item.icon">
+            j<div class="menu-mobile__icon" v-html="item.icon">
               </div>
             <div class="menu-mobile__title">
               {{ $t(item.title) }}

@@ -156,7 +156,7 @@ opacity: 1;
   left: 50%;
   transform: translate(-50%,0);
   z-index: -1;
-  transition: height 2s;
+  transition: height 1.2s;
 
   @media (max-width: $md2 + px) {
     left: 10%;
@@ -168,21 +168,21 @@ opacity: 1;
   content: '';
   display: inline-block;
   width: 2px;
-  height: calc(100% - 75px);
+  height: calc(100% - 64px);
   background-color: #03e9f4;
   box-shadow:0px 0px 5px 0px #03e9f4;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%,75px);
+  transform: translate(-50%,64px);
   z-index: -1;
   @media (max-width: $md2 + px) {
-    left: 37px;
+    left: 32px;
   }
   @media (max-width: 500px) {
-    left: 24px;
-    height: calc(100% - 50px);
-    transform: translate(-50%,50px);
+    left: 30px;
+    height: calc(100% - 56px);
+    transform: translate(-50%,56px);
   }
 }
 .test.active{
@@ -198,19 +198,20 @@ opacity: 1;
   overflow: hidden;
   padding: 14px;
   border: 2px solid #03e9f4;
-  background-color: #03e9f4;
   box-shadow:0px 0px 5px 0px #03e9f4;
   transition: all 4s;
   border-radius: 50%;
   // background: linear-gradient(90deg, rgba(255,128,2,0.1) 0%, rgba(253,18,132,0.1) 100%);
   // margin-right: 24px;
+  background: var(--main-bg);
   position: relative;
-  background: #000;
   display: block;
   @media (max-width: 500px) {
     padding: 10px;
   }
-
+svg{
+  color: var(--main-text);
+}
 }
 .item-experience__img.active{
 opacity: 1;
