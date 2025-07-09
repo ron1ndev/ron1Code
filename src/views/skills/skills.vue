@@ -59,12 +59,12 @@ const codeIcon = '</>'
 
           </div>
           <div class="skills__right">
-            <div class="skills__title-section">Main stack</div>
+            <div class="skills__title-section">Основной стек</div>
             <SkillProgress/>
           </div>
         </div>
       <div class="skills__main-content-bottom">
-        <div class="skills__title-section">Base stack</div>
+        <div class="skills__title-section">Базовый стек</div>
         <Skills
           :skills="skills"/>
       </div>

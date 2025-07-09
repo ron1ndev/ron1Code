@@ -6,19 +6,21 @@
     gap: 40px;
   }
   &__icon-code{
-      padding: 8px;
-      width: 32px;
+      padding: 8px 12px;
       height: 32px;
       background: #FD1284;
       border-radius: 8px;
       font-size: 12px;
       font-weight: 700;
-      display: flex;
+      display: inline-flex;
       align-items:center;
       justify-content:center;
       box-shadow:0px 0px 20px 5px rgb(253, 18, 132, 0.50);
       color: #fff;
       margin-bottom: 16px;
+      span{
+        margin-left: 12px;
+      }
   }
 
   &__main{
