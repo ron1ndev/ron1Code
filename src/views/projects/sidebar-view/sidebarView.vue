@@ -52,7 +52,7 @@ const defaultVisibleTechnologies = computed(()=>{
       <div class="sidebar-view_wrap">
         <div class="sidebar-view__name-project">{{ project.name || defaultCardView.name }}</div>
         <div class="sidebar-view__type-project">{{ project.type || defaultCardView.type }}</div>
-        <div class="sidebar-view__descr-project">{{ project.description || defaultCardView.description }}</div>
+        <div class="sidebar-view__descr-project" v-if="project.description">{{ project.description || defaultCardView.description }}</div>
         <ul class="sidebar-view__technology-list">
             <li class="sidebar-view__technology-item" v-for="item in visibleTechnologies.length ? visibleTechnologies : defaultVisibleTechnologies" :key="item.slug"><img :src="item.icon" alt=""></li>
         </ul>

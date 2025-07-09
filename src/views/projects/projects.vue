@@ -13,12 +13,18 @@ const tabs = [
   { title:'Все', slug: 'all' },
   { title:'Web-приложение', slug: 'app' },
   { title:'Интернет-магазин', slug: 'store' },
+  { title:'Бизнес', slug: 'buisnes' },
   { title:'Лендинг', slug: 'landing' },
 ]
 
 import projectImg1 from '@/assets/img/projects/otask3.png'
 import projectImg2 from '@/assets/img/projects/home.png'
 import projectImg3 from '@/assets/img/projects/halv2.png'
+import projectImg4 from '@/assets/img/projects/t3.png'
+import projectImg5 from '@/assets/img/projects/toRide.png'
+import projectImg6 from '@/assets/img/projects/rent.png'
+import projectImg7 from '@/assets/img/projects/porshe.png'
+import projectImg8 from '@/assets/img/projects/romKom2.png'
 
 const projects = [
   {
@@ -48,12 +54,68 @@ const projects = [
     type:'Интернет-магазин',
     slug:'store',
     img:projectImg3,
-    background:'#FFE5CC',
+    background:'linear-gradient(90deg, #F27964 0%, #E47B5A 100%)',
     technologies:['js','html','css'],
     description:'Интернет магазин для интерьера для дома и не только',
     linkGit:'https://github.com/ron1ndev/Halvace',
     linkWeb:'https://ron1ndev.github.io/Halvace/',
   },
+    {
+    name:'Romkom',
+    type:'Бизнес',
+    slug:'buisnes',
+    img:projectImg8,
+    background:'linear-gradient(90deg, #6400E9 0%, #41A0D9 100%)',
+    technologies:['js','html','css'],
+    description:'Организация комплексных поставок товаров и материалов, различного назначения',
+    linkGit:null,
+    linkWeb:'https://romkom.ru/o-kompanii/',
+  },
+    {
+    name:'Analemma',
+    type:'Интернет-магазин',
+    slug:'store',
+    img:projectImg4,
+    background:'linear-gradient(90deg, #005706 0%, #87E218 100%)',
+    technologies:['js','html','css'],
+    description:'Интернет магазин ювелирных украшений, цифровых и спортивных товаров',
+    linkGit:null,
+    linkWeb:'https://analemmatrade.ru/',
+  },
+    {
+    name:'Rent',
+    type:'Лендинг',
+    slug:'landing',
+    img:projectImg6,
+    background:'linear-gradient(90deg, #151C2B 0%, #274384 100%)',
+    technologies:['js','html','css'],
+    description:'Обслуживаем и ремонтируем жилую и коммерческую недвижимость по предоставленным нами работам.',
+    linkGit:'https://github.com/ron1ndev/RentPage',
+    linkWeb:'https://ron1ndev.github.io/RentPage/',
+  },
+  // {
+  //   name:'Porche',
+  //   type:'Лендинг',
+  //   slug:'landing',
+  //   img:projectImg7,
+  //   background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
+  //   technologies:['js','html','css'],
+  //   description:null,
+  //   linkGit:'https://github.com/ron1ndev/toRidePage',
+  //   linkWeb:'https://ron1ndev.github.io/toRidePage/index.html',
+  // },
+    {
+    name:'TORide',
+    type:'Лендинг',
+    slug:'landing',
+    img:projectImg5,
+    background:'linear-gradient(90deg, #040C1C 0%, #133882 100%)',
+    technologies:['js','html','css'],
+    description:null,
+    linkGit:'https://github.com/ron1ndev/toRidePage',
+    linkWeb:'https://ron1ndev.github.io/toRidePage/index.html',
+  },
+
 ]
 
 const activeTab = ref('all')
@@ -62,10 +124,10 @@ const filteredProjects = computed(()=>{
   return projects.filter(project=>{
 
     if(activeTab.value === 'all'){
-      return project
+      return true
+    }else{
+      return project.slug === activeTab.value
     }
-
-    return project.slug === activeTab.value
 
   })
 })
@@ -76,6 +138,19 @@ const changeTab = (tab) => {
 
 const handleOver = (project) =>{
   selectProject.value = project
+}
+
+const pluralize = (count, forms) => {
+      const mod10 = count % 10;
+      const mod100 = count % 100;
+
+      if (mod10 === 1 && mod100 !== 11) {
+        return forms[0]; 
+      } else if (mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) {
+        return forms[1]; 
+      } else {
+        return forms[2];
+      }
 }
 
 
@@ -91,18 +166,23 @@ const handleOver = (project) =>{
           :project="selectProject"/>
           
           <div class="projects__main">
-            <div class="projects__icon-code">{{ codeIcon }} <span>{{ filteredProjects.length }}</span></div>
+            <div class="projects__icon-code">{{ codeIcon }} <span>{{ filteredProjects.length  }} {{ pluralize(filteredProjects.length, ['Проект', 'Проекта', 'Проектов']) }}</span></div>
             <ul class="projects__tabs-controls">
               <li class="projects__tab-control" v-for="tab in tabs" :key="tab.slug" :class="{'active': activeTab === tab.slug}" @click="changeTab(tab.slug)">
                   {{ tab.title }}
               </li>
             </ul>
+            <div class="projects__content-list" :style="{paddingBottom: filteredProjects.length > 6 ? '100px' : null}">
+
+           
             <ul class="projects__list">
               <ProjectsCard v-for="item in filteredProjects"
               :key="item.img"
               :project="item"
               @handleOver="handleOver"/>
             </ul>
+
+             </div>
             
           </div>
         </div>
