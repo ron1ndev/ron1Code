@@ -3,6 +3,16 @@
     padding-top: 120px;
     display: flex;
     gap: 40px;
+    @media (max-width:992px) {
+      flex-direction: column;
+      padding-top: 70px;
+      gap: 20px;
+    }
+    @media (max-width:768px) {
+      padding-top: 60px;
+      gap: 10px;
+      padding-bottom: 90px;
+    }
   }
   &__icon-code{
       padding: 8px 12px;
@@ -23,17 +33,26 @@
   }
 
   &__main{
-    width: 860px;
+    max-width: 860px;
     height: 650px;
     background: rgba($color: #656565, $alpha: 0.1);
     padding: 16px;
     border-radius: 16px;
     border: 2px solid #1A1D24;
+    overflow: hidden;
+    @media (max-width:992px) {
+      // margin-top: 220px;
+    }
   }
 
   &__tabs-controls{
     display: flex;
     gap: 12px;
+  @media (max-width:600px) {
+      overflow-x: auto;
+      overflow-y: visible;
+      
+    }
   }
 
   &__tab-control{
@@ -45,6 +64,7 @@
     padding: 4px 8px;
     border-radius:8px;
     margin-bottom: 16px;
+    white-space: nowrap;
 
     &.active{
 font-weight: 700;
