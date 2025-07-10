@@ -25,6 +25,7 @@ import projectImg5 from '@/assets/img/projects/toRide.png'
 import projectImg6 from '@/assets/img/projects/rent.png'
 import projectImg7 from '@/assets/img/projects/porshe.png'
 import projectImg8 from '@/assets/img/projects/romKom2.png'
+import projectImg9 from '@/assets/img/projects/deti5.png'
 
 const projects = [
   {
@@ -81,6 +82,17 @@ const projects = [
     description:'Интернет магазин ювелирных украшений, цифровых и спортивных товаров',
     linkGit:null,
     linkWeb:'https://analemmatrade.ru/',
+  },
+    {
+    name:'NeDETI',
+    type:'Интернет-магазин',
+    slug:'store',
+    img:projectImg9,
+    background:'linear-gradient(90deg, #FFCB3D 0%, #FF601C 100%)',
+    technologies:['js','html','css'],
+    description:'Одежда для подростков и детей премиум качества',
+    linkGit:null,
+    linkWeb:'https://nedeti.store/',
   },
     {
     name:'Rent',
