@@ -41,6 +41,7 @@
     border-radius: 16px;
     border: 2px solid #1A1D24;
     overflow: hidden;
+    animation: leftBlock ease-out 0.8s forwards;
     @media (max-width:1300px) {
       min-width:auto;
     }
@@ -102,5 +103,15 @@ font-weight: 700;
     flex-wrap: wrap;
     gap: 20px;
 
+  }
+}
+
+@keyframes leftBlock {
+  0%{
+   transform: translate(50px,0px);
+   opacity: 0;
+  }100%{
+    transform: translate(0,0);
+    opacity: 1;
   }
 }

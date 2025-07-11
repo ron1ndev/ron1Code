@@ -105,17 +105,17 @@ const projects = [
     linkGit:'https://github.com/ron1ndev/RentPage',
     linkWeb:'https://ron1ndev.github.io/RentPage/',
   },
-  // {
-  //   name:'Porche',
-  //   type:'Лендинг',
-  //   slug:'landing',
-  //   img:projectImg7,
-  //   background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
-  //   technologies:['js','html','css'],
-  //   description:null,
-  //   linkGit:'https://github.com/ron1ndev/toRidePage',
-  //   linkWeb:'https://ron1ndev.github.io/toRidePage/index.html',
-  // },
+  {
+    name:'Porche',
+    type:'Лендинг',
+    slug:'landing',
+    img:projectImg7,
+    background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
+    technologies:['js','html','css'],
+    description:'Обзор Porsch Panamera',
+    linkGit:'https://github.com/ron1ndev/AutoPorschePage',
+    linkWeb:'https://ron1ndev.github.io/AutoPorschePage/',
+  },
     {
     name:'TORide',
     type:'Лендинг',
@@ -189,7 +189,7 @@ const pluralize = (count, forms) => {
            
             <ul class="projects__list">
               <ProjectsCard v-for="item in filteredProjects"
-              :key="item.img"
+              :key="item.img + activeTab"
               :project="item"
               @handleOver="handleOver"/>
             </ul>

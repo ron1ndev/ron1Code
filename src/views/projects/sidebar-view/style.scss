@@ -5,21 +5,25 @@
   border-radius: 16px;
   border: 2px solid #1A1D24;
   padding: 20px;
+  animation: upBlock ease-out 0.8s forwards;
   &__name-project{
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
     margin-bottom: 6px;
+    animation: fade ease-out 0.25s forwards;
   }
   &__type-project{
     font-size: 12px;
     line-height: 16px;
     margin-bottom: 16px;
+    animation: fade ease-out 0.25s forwards;
   }
   &__descr-project{
     font-size: 11px;
     line-height: 16px;
     margin-bottom: 34px;
+    animation: fade ease-out 0.25s forwards;
 
   @media (max-width:992px) {
      margin-bottom: 14px;
@@ -28,6 +32,7 @@
   &__technology-list{
     display: flex;
     gap: 10px;
+    animation: fade ease-out 0.25s forwards;
     
   }
   &__technology-item{
@@ -56,5 +61,26 @@
   @media (max-width:400px) {
       width: 100%;
       height: 190px;
+  }
+}
+
+@keyframes upBlock {
+  0%{
+   transform: translate(0,50px);
+   opacity: 0.4;
+  }100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -50,10 +50,10 @@ const defaultVisibleTechnologies = computed(()=>{
 <template>
     <div class="projects__sidebar-view sidebar-view">
       <div class="sidebar-view_wrap">
-        <div class="sidebar-view__name-project">{{ project.name || defaultCardView.name }}</div>
-        <div class="sidebar-view__type-project">{{ project.type || defaultCardView.type }}</div>
-        <div class="sidebar-view__descr-project" v-if="project.description">{{ project.description || defaultCardView.description }}</div>
-        <ul class="sidebar-view__technology-list">
+        <div class="sidebar-view__name-project" :key="project.name">{{ project.name || defaultCardView.name }}</div>
+        <div class="sidebar-view__type-project" :key="project.name">{{ project.type || defaultCardView.type }}</div>
+        <div class="sidebar-view__descr-project" :key="project.name" v-if="project.description">{{ project.description || defaultCardView.description }}</div>
+        <ul class="sidebar-view__technology-list" :key="project.name">
             <li class="sidebar-view__technology-item" v-for="item in visibleTechnologies.length ? visibleTechnologies : defaultVisibleTechnologies" :key="item.slug"><img :src="item.icon" alt=""></li>
         </ul>
       </div>
