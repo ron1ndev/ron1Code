@@ -5,8 +5,13 @@ import NeonBtn from '@/components/ui/neon-btn/neon-btn.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router'
+import { useDesktopStore } from '@/store/desktop';
 
 const router = useRouter()
+
+const store = useDesktopStore()
+
+console.log()
 
 const skills = [
   {file:'1.png',name:'CSS 3',alt:'CSS 3'},

@@ -39,7 +39,6 @@ const handleClick = () =>{
     margin: 40px 0px 0px 0px;
     transition: 0.5s;
     letter-spacing: 1px;
-    box-shadow: var(--neon-btn-shadow);
     color: #0f0f0f  ;
     background: var(--neon-bg);
     font-weight: 600;
@@ -53,17 +52,17 @@ const handleClick = () =>{
 
   @keyframes neon{
     0% {
-      box-shadow: 0 0 5px var(--neon-bg), 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg);
+      box-shadow: 0 0 5px var(--neon-btn-shadow), 0 0 10px var(--neon-btn-shadow), 0 0 40px var(--neon-btn-shadow);
     }
     50% {
-      box-shadow: 0 0 20px var(--neon-bg), 0 0 40px var(--neon-bg), 0 0 80px var(--neon-bg);
+      box-shadow: 0 0 20px var(--neon-btn-shadow), 0 0 40px var(--neon-btn-shadow), 0 0 80px var(--neon-btn-shadow);
     }
     100% {
-      box-shadow: 0 0 5px var(--neon-bg), 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg);
+      box-shadow: 0 0 5px var(--neon-btn-shadow), 0 0 10px var(--neon-btn-shadow), 0 0 40px var(--neon-btn-shadow);
     }
   }
   a:hover {
-    box-shadow: 0 0 10px var(--neon-bg), 0 0 40px var(--neon-bg), 0 0 80px var(--neon-bg);
+    box-shadow: 0 0 10px var(--neon-btn-shadow), 0 0 40px var(--neon-btn-shadow), 0 0 80px var(--neon-btn-shadow);
     transition: 0.5s ease-in-out;
 
   }
