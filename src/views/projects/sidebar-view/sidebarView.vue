@@ -17,10 +17,10 @@ const props = defineProps({
 })
 
 const defaultCardView = reactive({
-    name:'ron1code',
+    name:'O!task',
     type:'Web-приложение',
     slug:'app',
-    description:'Приложение портфолио, с показом свои работ, опыта и навыков',
+    description:'Таск-трекер, CRM, база знаний и учет финансов в одной системе. Российская система управления компанией',
     technologies:['vue','js','html','css'],
   })
 
@@ -52,7 +52,7 @@ const defaultVisibleTechnologies = computed(()=>{
       <div class="sidebar-view_wrap">
         <div class="sidebar-view__name-project" :key="project.name">{{ project.name || defaultCardView.name }}</div>
         <div class="sidebar-view__type-project" :key="project.name">{{ project.type || defaultCardView.type }}</div>
-        <div class="sidebar-view__descr-project" :key="project.name" v-if="project.description">{{ project.description || defaultCardView.description }}</div>
+        <div class="sidebar-view__descr-project" :key="project.name" v-if="project.description || defaultCardView.description">{{ project.description || defaultCardView.description }}</div>
         <ul class="sidebar-view__technology-list" :key="project.name">
             <li class="sidebar-view__technology-item" v-for="item in visibleTechnologies.length ? visibleTechnologies : defaultVisibleTechnologies" :key="item.slug"><img :src="item.icon" alt=""></li>
         </ul>

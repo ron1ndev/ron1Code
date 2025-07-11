@@ -22,26 +22,6 @@ main{
   }
 }
 
-// .glow-projects2{
-//   width: 600px;
-//   height: 100vh;
-//   background: #0acea3;
-//   position: absolute;
-//   top: 150%;
-//   left: 120%;
-//   opacity: 0.7;
-//   transform: translate(-50%,-100%);
-//   z-index: -1;
-//   filter: blur(300px);
-//   animation: 2s linear infinite alternate-reverse breath;
-//   @media (max-width:1300px) {
-//     top: 10%;
-//   }
-//   @media (max-width:992px) {
-//     display: none;
-//   }
-// }
-
 @keyframes breath {
   0%{
     opacity: 0.3;
@@ -56,6 +36,8 @@ main{
 
 
 .projects{
+  --iconBgColor:#FD1284;
+  --iconBgColor2:#FD123D;
   &__content{
     padding-top: 120px;
     display: flex;
@@ -82,7 +64,7 @@ main{
       display: inline-flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0px 0px 20px 5px rgb(253, 18, 132, 0.50);
+      box-shadow:0px 0px 20px 5px rgba($color: #FD1284, $alpha: 0.5);
       color: #fff;
       margin-bottom: 16px;
       span{
@@ -108,13 +90,41 @@ main{
     }
   }
 
+  &__content-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width:992px) {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+  }
+  &__bestcase{
+    @media (max-width:992px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__bestcase-title{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-bottom: 20px;
+    animation: scaleUp 0.5s ease forwards;
+  }
+
   &__tabs-controls{
     display: flex;
+    align-items:center;
     gap: 12px;
+    padding: 5px;
+    border-radius:16px;
+    margin-bottom: 16px;
+
   @media (max-width:600px) {
       overflow-x: auto;
       overflow-y: visible;
-      
     }
   }
 
@@ -126,14 +136,12 @@ main{
     // border:1px solid #fff;
     padding: 4px 8px;
     border-radius:8px;
-    margin-bottom: 16px;
     white-space: nowrap;
-
     &.active{
 font-weight: 700;
       border-color: #FD1284;
       background: #FD1284;
-       box-shadow:0px 0px 20px 5px rgb(253, 18, 132, 0.50);
+       box-shadow:0px 0px 20px 5px rgba($color: #FD1284, $alpha: 0.5);
 
     }
   }
@@ -185,4 +193,13 @@ font-weight: 700;
     opacity: 1;
   }
 }
-
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

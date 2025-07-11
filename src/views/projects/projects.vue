@@ -33,7 +33,8 @@ const projects = [
     type:'Web-приложение',
     slug:'app',
     img:projectImg1,
-    background:'linear-gradient(90deg, #26C6DA 0%, #23DA9A 100%)',
+    background:'linear-gradient(90deg, #FFCB3D 0%, #FF601C 100%)',
+    shadowColor:'#FFCB3D',
     description:'Таск-трекер, CRM, база знаний и учет финансов в одной системе. Российская система управления компанией',
     technologies:['vue','js','html','css'],
     linkGit:null,
@@ -46,6 +47,7 @@ const projects = [
     img:projectImg2,
     description:'Приложение портфолио, с показом свои работ, опыта и навыков',
     background:'linear-gradient(90deg, #FD1284 0%, #FD123D 100%)',
+    shadowColor:'#FD123D',
     technologies:['vue','js','html','css'],
     linkGit:'https://github.com/ron1ndev/ron1Code',
     linkWeb:'https://ron1ndev.github.io/ron1Code/#projects',
@@ -56,6 +58,7 @@ const projects = [
     slug:'store',
     img:projectImg3,
     background:'linear-gradient(90deg, #F27964 0%, #E47B5A 100%)',
+    shadowColor:'#F27964',
     technologies:['js','html','css'],
     description:'Интернет магазин для интерьера для дома и не только',
     linkGit:'https://github.com/ron1ndev/Halvace',
@@ -67,6 +70,7 @@ const projects = [
     slug:'buisnes',
     img:projectImg8,
     background:'linear-gradient(90deg, #6400E9 0%, #41A0D9 100%)',
+    shadowColor:'#6400E9',
     technologies:['js','html','css'],
     description:'Организация комплексных поставок товаров и материалов, различного назначения',
     linkGit:null,
@@ -78,6 +82,7 @@ const projects = [
     slug:'store',
     img:projectImg4,
     background:'linear-gradient(90deg, #005706 0%, #87E218 100%)',
+    shadowColor:'#07bb7f',
     technologies:['js','html','css'],
     description:'Интернет магазин ювелирных украшений, цифровых и спортивных товаров',
     linkGit:null,
@@ -88,7 +93,8 @@ const projects = [
     type:'Интернет-магазин',
     slug:'store',
     img:projectImg9,
-    background:'linear-gradient(90deg, #FFCB3D 0%, #FF601C 100%)',
+    background:'linear-gradient(90deg, #26C6DA 0%, #23DA9A 100%)',
+    shadowColor:'#2ef8ff',
     technologies:['js','html','css'],
     description:'Одежда для подростков и детей премиум качества',
     linkGit:null,
@@ -100,6 +106,7 @@ const projects = [
     slug:'landing',
     img:projectImg6,
     background:'linear-gradient(90deg, #151C2B 0%, #274384 100%)',
+    shadowColor:'#151C2B',
     technologies:['js','html','css'],
     description:'Обслуживаем и ремонтируем жилую и коммерческую недвижимость по предоставленным нами работам.',
     linkGit:'https://github.com/ron1ndev/RentPage',
@@ -111,6 +118,7 @@ const projects = [
     slug:'landing',
     img:projectImg7,
     background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
+    shadowColor:'#1E1E1E',
     technologies:['js','html','css'],
     description:'Обзор Porsch Panamera',
     linkGit:'https://github.com/ron1ndev/AutoPorschePage',
@@ -122,6 +130,7 @@ const projects = [
     slug:'landing',
     img:projectImg5,
     background:'linear-gradient(90deg, #040C1C 0%, #133882 100%)',
+     shadowColor:'#040C1C',
     technologies:['js','html','css'],
     description:null,
     linkGit:'https://github.com/ron1ndev/toRidePage',
@@ -174,8 +183,20 @@ const pluralize = (count, forms) => {
   <main>
       <section class="projects" id="projects">
         <div class="projects__content _container">
-          <SidebarView
-          :project="selectProject"/>
+          <div class="projects__content-left">
+            <SidebarView
+            :project="selectProject"/>
+
+
+            <div class="projects__bestcase">
+                <div class="projects__bestcase-title">Главный SPA-проект</div>
+                <ProjectsCard
+                  :project="projects[0]"
+                  @handleOver="handleOver"/>
+            </div>
+
+          </div>
+
           
           <div class="projects__main">
             <div class="projects__icon-code">{{ codeIcon }} <span>{{ filteredProjects.length  }} {{ pluralize(filteredProjects.length, ['Проект', 'Проекта', 'Проектов']) }}</span></div>

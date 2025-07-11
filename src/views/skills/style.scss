@@ -168,7 +168,7 @@
 
     }
     &__content-right{
-
+      pointer-events: none;
     }
     &__preview{
       border-top-left-radius: 16px;
@@ -184,7 +184,7 @@
       }
 
       @media (max-width:992px) {
-       transform: translate(0,50px);
+       transform: translate(0,20px);
       }
       img{
         width: 100%;
@@ -237,6 +237,7 @@
       transition: all .5s;
       background: #FD1284;
       width: 32px;
+      color: #fff;
 
       &:hover{
         background: #FD1284;
@@ -247,7 +248,8 @@
         }
       }
       @media (max-width:992px) {
-        display: none;
+        margin-top: 20px;
+        // display: none;
       }
     }
     &__btn-icon{
