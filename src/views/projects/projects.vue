@@ -200,6 +200,8 @@ const pluralize = (count, forms) => {
         </div>
       </section>
       <MobileMenu/>
+
+      <div class="glow-projects"></div>
   </main>
 </template>
 

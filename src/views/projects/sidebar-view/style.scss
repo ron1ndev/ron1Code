@@ -52,7 +52,7 @@
       // position: fixed;
       top: 60px;
       z-index: 1;
-
+      animation: downBlock ease-out 0.8s forwards;
   }
   @media (max-width:768px) {
       width: 100%;
@@ -67,6 +67,16 @@
 @keyframes upBlock {
   0%{
    transform: translate(0,50px);
+   opacity: 0.4;
+  }100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes downBlock {
+  0%{
+   transform: translate(0,-50px);
    opacity: 0.4;
   }100%{
     transform: translate(0,0);

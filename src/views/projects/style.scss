@@ -1,3 +1,60 @@
+main{
+  position: relative;
+  min-height: 100vh;
+}
+.glow-projects{
+  width: 600px;
+  height: 100vh;
+  background: #5e0de0;
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  opacity: 0.7;
+  transform: translate(-50%,-100%);
+  z-index: -1;
+  filter: blur(300px);
+  animation: 2s linear infinite alternate-reverse breath;
+  @media (max-width:1300px) {
+    top: 10%;
+  }
+  @media (max-width:992px) {
+    display: none;
+  }
+}
+
+// .glow-projects2{
+//   width: 600px;
+//   height: 100vh;
+//   background: #0acea3;
+//   position: absolute;
+//   top: 150%;
+//   left: 120%;
+//   opacity: 0.7;
+//   transform: translate(-50%,-100%);
+//   z-index: -1;
+//   filter: blur(300px);
+//   animation: 2s linear infinite alternate-reverse breath;
+//   @media (max-width:1300px) {
+//     top: 10%;
+//   }
+//   @media (max-width:992px) {
+//     display: none;
+//   }
+// }
+
+@keyframes breath {
+  0%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
+
+
 .projects{
   &__content{
     padding-top: 120px;
@@ -17,6 +74,7 @@
   &__icon-code{
       padding: 8px 12px;
       height: 32px;
+      min-width: 130px;
       background: #FD1284;
       border-radius: 8px;
       font-size: 12px;
@@ -44,6 +102,9 @@
     animation: leftBlock ease-out 0.8s forwards;
     @media (max-width:1300px) {
       min-width:auto;
+    }
+    @media (max-width:992px) {
+      animation: upBlock ease-out 0.8s forwards;
     }
   }
 
@@ -115,3 +176,13 @@ font-weight: 700;
     opacity: 1;
   }
 }
+@keyframes upBlock {
+  0%{
+   transform: translate(0,50px);
+   opacity: 0;
+  }100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
