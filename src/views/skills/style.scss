@@ -71,7 +71,7 @@
     display: inline-block;
     width: 28px;
     height: 2px;
-    background: #fff;
+    background: var(--main-text);
     position: absolute;
     top: 50%;
     right: -40px;
@@ -237,7 +237,7 @@
       transition: all .5s;
       background: #FD1284;
       width: 32px;
-      color: #fff;
+      color: var(--main-text);
 
       &:hover{
         background: #FD1284;

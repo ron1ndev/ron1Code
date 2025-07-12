@@ -41,3 +41,9 @@
     animation: fillBar ease-out 3s forwards;
   }
 }
+
+.theme-light{
+  .progress-item__bar{
+    box-shadow:0px 0px 20px 0px #131212;
+  }
+}

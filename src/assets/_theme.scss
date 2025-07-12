@@ -8,8 +8,10 @@
  --neon-btn-bg:#03e9f4;
  --neon-btn-shadow:transparent;
  --animation-neon:none;
-
  --scrollbar-thumb-bg:#556770;
+
+ // projects
+ --projects-content-bg:#fff;
  
 }
 
@@ -24,6 +26,8 @@
   --neon-btn-bg:#1a2634;
   --neon-btn-shadow:#03e9f4;
   --animation-neon:neon 5s ease-in-out infinite alternate;
-
   --scrollbar-thumb-bg:#1a2634;
+
+  // projects
+ --projects-content-bg:rgba(101, 101, 101, 0.1);
 }

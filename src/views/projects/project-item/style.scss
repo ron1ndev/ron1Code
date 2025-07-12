@@ -116,6 +116,12 @@
 
 }
 
+.theme-light{
+  .projects-card__wrap{
+    box-shadow:none;
+  }
+}
+
 @keyframes scaleUp {
   0% {
     transform: scale(0.5);

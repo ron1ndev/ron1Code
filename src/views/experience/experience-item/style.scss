@@ -272,3 +272,15 @@ opacity: 1;
   right: 80px;
   width: 100%;
 }
+
+.theme-light{
+  .item-experience__img{
+    box-shadow:none;
+  }
+  .test.active2::after{
+    box-shadow:none;
+  }
+  .info-experience{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+}

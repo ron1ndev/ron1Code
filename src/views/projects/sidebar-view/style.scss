@@ -1,9 +1,9 @@
 .sidebar-view{
   width: 250px;
   height: 300px;
-  background: rgba($color: #656565, $alpha: 0.1);
+  background: var(--projects-content-bg);
   border-radius: 16px;
-  border: 2px solid #1A1D24;
+  border: 2px solid var(--main-border-bg);
   padding: 20px;
   // margin-bottom: 40px;
   animation: upBlock ease-out 0.8s forwards;

@@ -4,6 +4,13 @@ import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import SidebarView from './sidebar-view/sidebarView.vue';
 import ProjectsCard from './project-item/projectsCard.vue'
 import { ref, computed, reactive} from 'vue';
+import { useDesktopStore } from '@/store/desktop';
+
+const store = useDesktopStore()
+
+const isDark = computed(()=>{
+  return store.isDarkTheme
+})
 
 const codeIcon = '</>'
 

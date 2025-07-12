@@ -22,17 +22,7 @@ main{
   }
 }
 
-@keyframes breath {
-  0%{
-    opacity: 0.3;
-  }
-  50%{
-    opacity: 0.6;
-  }
-  100%{
-    opacity: 0.8;
-  }
-}
+
 
 
 .projects{
@@ -76,10 +66,10 @@ main{
     max-width: 860px;
     min-width: 860px;
     height: 650px;
-    background: rgba($color: #656565, $alpha: 0.1);
+    background: var(--projects-content-bg);
     padding: 16px;
     border-radius: 16px;
-    border: 2px solid #1A1D24;
+    border: 2px solid var(--main-border-bg);
     overflow: hidden;
     animation: leftBlock ease-out 0.8s forwards;
     @media (max-width:1300px) {
@@ -138,7 +128,8 @@ main{
     border-radius:8px;
     white-space: nowrap;
     &.active{
-font-weight: 700;
+      font-weight: 700;
+      color: #fff;
       border-color: #FD1284;
       background: #FD1284;
        box-shadow:0px 0px 20px 5px rgba($color: #FD1284, $alpha: 0.5);
@@ -174,7 +165,32 @@ font-weight: 700;
 
   }
 }
+.theme-light{
+  .projects__icon-code{
+    box-shadow:none;
+  }
 
+  .projects__tab-control{
+        &.active{
+    box-shadow:none;
+    }
+  }
+  .glow-projects{
+    display: none;
+  }
+}
+
+@keyframes breath {
+  0%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
 @keyframes leftBlock {
   0%{
    transform: translate(50px,0px);
