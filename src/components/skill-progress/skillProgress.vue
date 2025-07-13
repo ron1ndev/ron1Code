@@ -4,11 +4,11 @@ defineOptions({
   name:"SkillProgress"
 })
 
-import icon1 from '@/assets/img/skills/3.png'
-import icon2 from '@/assets/img/skills/2.png'
-import icon3 from '@/assets/img/skills/1.png'
-import icon4 from '@/assets/img/skills/8.png'
-import icon5 from '@/assets/img/skills/5.png'
+import icon1 from '@/assets/img/skills/js.png'
+import icon2 from '@/assets/img/skills/html.png'
+import icon3 from '@/assets/img/skills/css.png'
+import icon4 from '@/assets/img/skills/vue.png'
+import icon5 from '@/assets/img/skills/git.png'
 
 type Bar = {
   icon: string,

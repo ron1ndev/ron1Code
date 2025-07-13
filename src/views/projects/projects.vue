@@ -23,15 +23,15 @@ const tabs = computed(()=>{
   ]
 })
 
-import projectImg1 from '@/assets/img/projects/otask3.png'
-import projectImg2 from '@/assets/img/projects/home.png'
-import projectImg3 from '@/assets/img/projects/halv2.png'
-import projectImg4 from '@/assets/img/projects/t3.png'
-import projectImg5 from '@/assets/img/projects/toRide.png'
-import projectImg6 from '@/assets/img/projects/rent.png'
-import projectImg7 from '@/assets/img/projects/porshe.png'
-import projectImg8 from '@/assets/img/projects/romKom2.png'
-import projectImg9 from '@/assets/img/projects/deti5.png'
+import otaskPrewiew from '@/assets/img/projects/otaskSmall.png'
+import ron1CodePreview from '@/assets/img/projects/ron1Code.png'
+import halvacePreview from '@/assets/img/projects/halvace.png'
+import analemmaPreview from '@/assets/img/projects/analemma.png'
+import toRidePreview from '@/assets/img/projects/toRide.png'
+import rentPreview from '@/assets/img/projects/rent.png'
+import porshePreview from '@/assets/img/projects/porshe.png'
+import romComPreview from '@/assets/img/projects/romCom.png'
+import neDetiPreview from '@/assets/img/projects/neDeti.png'
 
 const projects = computed(()=>{
   return [
@@ -39,7 +39,7 @@ const projects = computed(()=>{
       name:'O!task',
       type:t('projects.typeProjects.app'),
       slug:'app',
-      img:projectImg1,
+      img:otaskPrewiew,
       background:'linear-gradient(90deg, #FFCB3D 0%, #FF601C 100%)',
       shadowColor:'#FFCB3D',
       description:t('projects.descrProjects.otask'),
@@ -51,7 +51,7 @@ const projects = computed(()=>{
       name:'ron1code',
       type:t('projects.typeProjects.app'),
       slug:'app',
-      img:projectImg2,
+      img:ron1CodePreview,
       description:t('projects.descrProjects.ron1code'),
       background:'linear-gradient(90deg, #FD1284 0%, #FD123D 100%)',
       shadowColor:'#FD123D',
@@ -63,7 +63,7 @@ const projects = computed(()=>{
       name:'Halvace',
       type:t('projects.typeProjects.store'),
       slug:'store',
-      img:projectImg3,
+      img:halvacePreview,
       background:'linear-gradient(90deg, #F27964 0%, #E47B5A 100%)',
       shadowColor:'#F27964',
       technologies:['js','html','css'],
@@ -75,7 +75,7 @@ const projects = computed(()=>{
       name:'Romkom',
       type:t('projects.typeProjects.buisnes'),
       slug:'buisnes',
-      img:projectImg8,
+      img:romComPreview,
       background:'linear-gradient(90deg, #6400E9 0%, #41A0D9 100%)',
       shadowColor:'#6400E9',
       technologies:['js','html','css'],
@@ -87,7 +87,7 @@ const projects = computed(()=>{
       name:'Analemma',
       type:t('projects.typeProjects.store'),
       slug:'store',
-      img:projectImg4,
+      img:analemmaPreview,
       background:'linear-gradient(90deg, #005706 0%, #87E218 100%)',
       shadowColor:'#07bb7f',
       technologies:['js','html','css'],
@@ -99,7 +99,7 @@ const projects = computed(()=>{
       name:'NeDETI',
       type:t('projects.typeProjects.store'),
       slug:'store',
-      img:projectImg9,
+      img:neDetiPreview,
       background:'linear-gradient(90deg, #26C6DA 0%, #23DA9A 100%)',
       shadowColor:'#2ef8ff',
       technologies:['js','html','css'],
@@ -111,7 +111,7 @@ const projects = computed(()=>{
       name:'Rent',
       type:t('projects.typeProjects.landing'),
       slug:'landing',
-      img:projectImg6,
+      img:rentPreview,
       background:'linear-gradient(90deg, #151C2B 0%, #274384 100%)',
       shadowColor:'#151C2B',
       technologies:['js','html','css'],
@@ -123,7 +123,7 @@ const projects = computed(()=>{
       name:'Porche',
       type:t('projects.typeProjects.landing'),
       slug:'landing',
-      img:projectImg7,
+      img:porshePreview,
       background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
       shadowColor:'#1E1E1E',
       technologies:['js','html','css'],
@@ -135,7 +135,7 @@ const projects = computed(()=>{
       name:'TORide',
       type:t('projects.typeProjects.landing'),
       slug:'landing',
-      img:projectImg5,
+      img:toRidePreview,
       background:'linear-gradient(90deg, #040C1C 0%, #133882 100%)',
       shadowColor:'#040C1C',
       technologies:['js','html','css'],

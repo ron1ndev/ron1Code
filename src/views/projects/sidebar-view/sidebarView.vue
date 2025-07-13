@@ -1,9 +1,9 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import vueIcon from '@/assets/img/skills/8.png'
-import jsIcon from '@/assets/img/skills/3.png'
-import htmlIcon from '@/assets/img/skills/2.png'
-import csssIcon from '@/assets/img/skills/1.png'
+import vueIcon from '@/assets/img/skills/vue.png'
+import jsIcon from '@/assets/img/skills/js.png'
+import htmlIcon from '@/assets/img/skills/html.png'
+import csssIcon from '@/assets/img/skills/css.png'
 
 const { t } = useI18n()
 

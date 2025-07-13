@@ -9,14 +9,14 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const skills = [
-  {file:'1.png',name:'CSS 3',alt:'CSS 3'},
-  {file:'2.png',name:'HTML 5',alt:'HTML 5'},
-  {file:'3.png',name:'JavaScript',alt:'JavaScript'},
-  {file:'4.1.png',name:'React',alt:'React'},
-  {file:'8.png',name:'Vue',alt:'Vue'},
-  {file:'5.png',name:'Git',alt:'Git'},
-  {file:'9.svg',name:'Vite',alt:'Vite'},
-  {file:'6.png',name:'Gulp',alt:'Gulp'},
+  {file:'css.png',name:'CSS 3',alt:'CSS 3'},
+  {file:'html.png',name:'HTML 5',alt:'HTML 5'},
+  {file:'js.png',name:'JavaScript',alt:'JavaScript'},
+  {file:'react.png',name:'React',alt:'React'},
+  {file:'vue.png',name:'Vue',alt:'Vue'},
+  {file:'git.png',name:'Git',alt:'Git'},
+  {file:'vite.svg',name:'Vite',alt:'Vite'},
+  {file:'gulp.png',name:'Gulp',alt:'Gulp'},
 ]
 
 const vh  = ref(window.innerHeight * 0.01)

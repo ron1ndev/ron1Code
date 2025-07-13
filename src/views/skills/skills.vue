@@ -8,14 +8,14 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n()
 
 const skills = [
-  {file:'10.png',name:'CSS 3',alt:'CSS 3'},
-  {file:'11.png',name:'HTML 5',alt:'HTML 5'},
-  {file:'12.png',name:'JavaScript',alt:'JavaScript'},
-  {file:'13.png',name:'React',alt:'React'},
-  {file:'14.png',name:'Vue',alt:'Vue'},
-  {file:'15.png',name:'Git',alt:'Git'},
-  {file:'16.png',name:'Vite',alt:'Vite'},
-  {file:'17.png',name:'Gulp',alt:'Gulp'},
+  {file:'nodejs.png',name:'nodejs',alt:'nodejs'},
+  {file:'express.png',name:'express',alt:'express'},
+  {file:'webpack.png',name:'webpack',alt:'webpack'},
+  {file:'postsql.png',name:'postsql',alt:'postsql'},
+  {file:'vite.png',name:'vite',alt:'vite'},
+  {file:'gulp.png',name:'gulp',alt:'gulp'},
+  {file:'tailwind.png',name:'tailwind',alt:'tailwind'},
+  {file:'figma.png',name:'figma',alt:'figma'},
 ]
 
 const codeIcon = '</>'
@@ -38,10 +38,10 @@ const codeIcon = '</>'
                 <div class="last-poject__content-left">
                   <div class="last-poject__type">{{ t('projects.typeProjects.app') }}</div>
                   <ul class="last-poject__technology-list">
-                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/8.png" alt=""></li>
-                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/3.png" alt=""></li>
-                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/2.png" alt=""></li>
-                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/1.png" alt=""></li>
+                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/vue.png" alt=""></li>
+                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/js.png" alt=""></li>
+                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/html.png" alt=""></li>
+                    <li class="last-poject__technology-item"><img src="/src/assets/img/skills/css.png" alt=""></li>
                   </ul>
                   <a href="https://otask.ru/" target="_blank" class="last-poject__btn">
                     <div class="last-poject__btn-icon">{{ codeIcon }}</div>
@@ -50,7 +50,7 @@ const codeIcon = '</>'
                 </div>
                 <a href="https://otask.ru/" target="_blank" class="last-poject__content-right">
                   <div class="last-poject__preview">
-                    <img src="/src/assets/img/projects/0.1.png" alt="last-project">
+                    <img src="/src/assets/img/projects/otaskSmall.png" alt="last-project">
                   </div>
                 </a>
               </div>
