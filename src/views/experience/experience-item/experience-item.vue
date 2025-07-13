@@ -67,7 +67,7 @@ onUnmounted(()=>{
                 
                 <li class="info-experience__item" v-for="item in experience.items" :key="item">{{ item }}</li>
             </ul>
-            <div class="info-experience__year">{{ experience.year }} г.</div>
+            <div class="info-experience__year">{{ experience.year }}</div>
         </div>
         <div class="test">
             <div class="item-experience__img">
@@ -77,7 +77,7 @@ onUnmounted(()=>{
             </div>
     </div>
         <div class="item-experience__year" :class="{'item-experience__year-reverse': isReverse }">
-            {{ experience.year }} г.
+            {{ experience.year }}
         </div>
     </div>                  
 </template>
