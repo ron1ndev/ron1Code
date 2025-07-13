@@ -8,13 +8,9 @@
 	}
 }
 .skills__content {
-  // border-top:1px solid #1a1d24;
-  // border-bottom:1px solid #1a1d24;
   max-width: 850px;
   margin: 0 auto;
-  // overflow: hidden;
   position: relative;
-  // margin-bottom: 300px;
   @media (max-width: #{$md1}px) {
 		margin-bottom: 150px;
 	}
@@ -63,7 +59,6 @@
   display: flex;
   justify-content: center;
   align-items:center;
-  // gap: 10px 50px;
   @media (max-width: #{$md3}px) {
     justify-content: space-evenly;
 	}
@@ -82,14 +77,6 @@
     @media (max-width: 533px) {
     margin-right: 25px;
 	}
-  // &:after{
-  // content:"";
-  // display: inline-block;
-  // width: 50px;
-  // height: 50px;
-  // position: absolute;
-  // box-shadow: 0 0 10px #03e9f4, 0 0 40px #03e9f4, 0 0 80px #03e9f4;
-  // }
 }
 
 .skills__item.active{
@@ -120,8 +107,8 @@
   font-weight: 700;
   text-transform: uppercase;
   color:transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255,0.3); /* Добавляем обводку (цвет и ширина) */
-  -webkit-text-fill-color: transparent; /* Заполнение текста тоже делаем прозрачным */
+  -webkit-text-stroke: 1px rgba(255, 255, 255,0.3); 
+  -webkit-text-fill-color: transparent;
   position: absolute;
   top: -50px;
   right: 50%;
@@ -166,7 +153,6 @@
 }
 
 
-/* Ключевая анимация */
 @keyframes scroll {
   0% {
     transform: translateX(0%);

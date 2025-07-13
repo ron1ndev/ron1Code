@@ -1,18 +1,10 @@
 .header {
-  // scroll-margin-top: 100px; /* Добавляет отступ сверху */
-  // margin-bottom: 100px;
   position: fixed;
   width: 100%;
   z-index: 10;
-  // background: rgba(255, 255, 255, 0.7); /* Альтернатива для браузеров без поддержки */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  // backdrop-filter: blur(8px) grayscale(50%) brightness(1.2);
-  // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для эффекта глубины */
-  // background: linear-gradient(90deg, rgba(255,128,2,1) 0%, rgb(253, 85, 18) 100%);
-
-    border-bottom:1px solid var(--main-border-bg);
-
+  border-bottom:1px solid var(--main-border-bg);
 }
 .header__content {
   display: flex;
@@ -24,10 +16,6 @@
     padding: 10px 10px;
   }
 
-  @media (max-width: #{$md3}px) {
-    // background: linear-gradient(90deg, rgba(255,128,2,1) 0%, rgba(253,18,132,1) 100%);
-  
-  }
   @media (max-width: 600px) {
     gap: 30px;
   }
@@ -55,7 +43,6 @@
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: -1;
-  // box-shadow:0px 0px 20px 5px #03e9f4;
   }
 
   }
@@ -81,9 +68,9 @@
   }
 }
 .logo__title:hover a{
-  background: #{$mainBackgroundGradient}; /* Задаем градиент */
-  -webkit-background-clip: text; /* Используем градиент как заливку для текста */
-  -webkit-text-fill-color: transparent; /* Делаем текст прозрачным, чтобы был виден только градиент */
+  background: #{$mainBackgroundGradient}; 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
   transition: all .3s;
 }
 
@@ -95,11 +82,10 @@
 }
 
 .logo__icon-path {
-  fill: var(--main-text); /* Задаем начальный цвет для SVG */
-  transition: fill 0.3s ease; /* Плавный переход */
+  fill: var(--main-text); 
+  transition: fill 0.3s ease;
 }
 
-/* При наведении меняем заливку на градиент */
 .logo__icon-svg:hover .logo__icon-path {
   @media (min-width:768px){
     fill: url(#hover-gradient);
@@ -153,9 +139,9 @@
   }
 
   &.active{
-    background: #{$mainBackgroundGradient}; /* Задаем градиент */
-    -webkit-background-clip: text; /* Используем градиент как заливку для текста */
-    -webkit-text-fill-color: transparent; /* Делаем текст прозрачным, чтобы был виден только градиент */
+    background: #{$mainBackgroundGradient}; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
   }
 }
 .header__item::before{
@@ -171,20 +157,7 @@
   transition: all .3s;
   
 }
-.header__item:hover.header__item::before{
-  // @media (min-width:768px){
-  //   content:'';
-  //   display: inline-block;
-  //   width: 100%;
-  //   height: 2px;
-  //   background: #{$mainBackgroundGradient};
-  //   position: absolute;
-  //   bottom: -8px;
-  //   left: 0;
-  //   opacity: 1;
-  //   transition: all .3s;
-  // }  
-}
+
 .header__item:hover .header__link{
   @media (min-width:768px){
     background: #{$mainBackgroundGradient}; /* Задаем градиент */
@@ -211,8 +184,6 @@
   font-size: 20px;
 }
 
-.header__theme-switch {
-}
 .theme-switch {
   width: 40px;
   height: 20px;

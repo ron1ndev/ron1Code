@@ -1,13 +1,11 @@
 <script setup>
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import { useDesktopStore } from '@/store/desktop';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRouter } from 'vue-router';
 
 const router = useRouter()
 const currenRouter = router.currentRoute.value.path
-
-console.log(currenRouter)
 
 const { locale } = useI18n();
 const store = useDesktopStore()
