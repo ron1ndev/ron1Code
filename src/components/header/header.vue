@@ -40,7 +40,9 @@ const switchTheme = () => {
 }
 
 const switchLocal = ()=>{
-   locale.value = locale.value === 'ru' ? 'en' : 'ru';
+  const local = locale.value === 'ru' ? 'en' : 'ru';
+   localStorage.setItem('locale', local)
+   locale.value = local;
 }
 const openModal = ()=>{
   store.changeVisibleModal(true)
