@@ -1,8 +1,11 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import vueIcon from '@/assets/img/skills/8.png'
 import jsIcon from '@/assets/img/skills/3.png'
 import htmlIcon from '@/assets/img/skills/2.png'
 import csssIcon from '@/assets/img/skills/1.png'
+
+const { t } = useI18n()
 
 import { defineOptions, defineProps, computed, reactive } from 'vue';
 defineOptions({
@@ -16,14 +19,15 @@ const props = defineProps({
   }
 })
 
-const defaultCardView = reactive({
-    name:'O!task',
-    type:'Web-приложение',
-    slug:'app',
-    description:'Таск-трекер, CRM, база знаний и учет финансов в одной системе. Российская система управления компанией',
-    technologies:['vue','js','html','css'],
-  })
-
+const defaultCardView = computed(()=>{
+     return {
+        name:'O!task',
+        type:t('projects.typeProjects.app'),
+        slug:'app',
+        description:t('projects.descrProjects.otask'),
+        technologies:['vue','js','html','css'],
+      }
+})
 
 const technologies = [
   {slug:'vue', icon:vueIcon},
@@ -40,7 +44,7 @@ const visibleTechnologies = computed(()=>{
 
 const defaultVisibleTechnologies = computed(()=>{
  return technologies.filter(item=>{
-    return defaultCardView.technologies?.includes(item.slug)
+    return defaultCardView.value.technologies?.includes(item.slug)
   })
 })
 

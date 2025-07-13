@@ -3,8 +3,11 @@ import Header from '@/components/header/header.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import SidebarView from './sidebar-view/sidebarView.vue';
 import ProjectsCard from './project-item/projectsCard.vue'
-import { ref, computed, reactive} from 'vue';
+import { ref, computed, reactive, watch} from 'vue';
 import { useDesktopStore } from '@/store/desktop';
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const store = useDesktopStore()
 
@@ -16,13 +19,24 @@ const codeIcon = '</>'
 
 const selectProject = ref({})
 
-const tabs = [
-  { title:'Все', slug: 'all' },
-  { title:'Web-приложение', slug: 'app' },
-  { title:'Интернет-магазин', slug: 'store' },
-  { title:'Бизнес', slug: 'buisnes' },
-  { title:'Лендинг', slug: 'landing' },
-]
+const tabs = computed(()=>{
+    return [
+    { title:t('projects.tabControls.all'), slug: 'all' },
+    { title:t('projects.tabControls.app'), slug: 'app' },
+    { title:t('projects.tabControls.store'), slug: 'store' },
+    { title:t('projects.tabControls.buisnes'), slug: 'buisnes' },
+    { title:t('projects.tabControls.landing'), slug: 'landing' },
+  ]
+})
+
+const tabsSkelet =  [
+    { title:'Все', slug: 'all' },
+    { title:'Web-приложение', slug: 'app' },
+    { title:'Интернет-магазин', slug: 'store' },
+    { title:'Бизнес', slug: 'buisnes' },
+    { title:'Лендинг', slug: 'landing' },
+  ]
+
 
 import projectImg1 from '@/assets/img/projects/otask3.png'
 import projectImg2 from '@/assets/img/projects/home.png'
@@ -34,122 +48,124 @@ import projectImg7 from '@/assets/img/projects/porshe.png'
 import projectImg8 from '@/assets/img/projects/romKom2.png'
 import projectImg9 from '@/assets/img/projects/deti5.png'
 
-const projects = [
-  {
-    name:'O!task',
-    type:'Web-приложение',
-    slug:'app',
-    img:projectImg1,
-    background:'linear-gradient(90deg, #FFCB3D 0%, #FF601C 100%)',
-    shadowColor:'#FFCB3D',
-    description:'Таск-трекер, CRM, база знаний и учет финансов в одной системе. Российская система управления компанией',
-    technologies:['vue','js','html','css'],
-    linkGit:null,
-    linkWeb:'https://otask.ru/',
-  },
-  {
-    name:'ron1code',
-    type:'Web-приложение',
-    slug:'app',
-    img:projectImg2,
-    description:'Приложение портфолио, с показом свои работ, опыта и навыков',
-    background:'linear-gradient(90deg, #FD1284 0%, #FD123D 100%)',
-    shadowColor:'#FD123D',
-    technologies:['vue','js','html','css'],
-    linkGit:'https://github.com/ron1ndev/ron1Code',
-    linkWeb:'https://ron1ndev.github.io/ron1Code/#projects',
-  },
-  {
-    name:'Halvace',
-    type:'Интернет-магазин',
-    slug:'store',
-    img:projectImg3,
-    background:'linear-gradient(90deg, #F27964 0%, #E47B5A 100%)',
-    shadowColor:'#F27964',
-    technologies:['js','html','css'],
-    description:'Интернет магазин для интерьера для дома и не только',
-    linkGit:'https://github.com/ron1ndev/Halvace',
-    linkWeb:'https://ron1ndev.github.io/Halvace/',
-  },
+const projects = computed(()=>{
+  return [
     {
-    name:'Romkom',
-    type:'Бизнес',
-    slug:'buisnes',
-    img:projectImg8,
-    background:'linear-gradient(90deg, #6400E9 0%, #41A0D9 100%)',
-    shadowColor:'#6400E9',
-    technologies:['js','html','css'],
-    description:'Организация комплексных поставок товаров и материалов, различного назначения',
-    linkGit:null,
-    linkWeb:'https://romkom.ru/o-kompanii/',
-  },
+      name:'O!task',
+      type:t('projects.typeProjects.app'),
+      slug:'app',
+      img:projectImg1,
+      background:'linear-gradient(90deg, #FFCB3D 0%, #FF601C 100%)',
+      shadowColor:'#FFCB3D',
+      description:t('projects.descrProjects.otask'),
+      technologies:['vue','js','html','css'],
+      linkGit:null,
+      linkWeb:'https://otask.ru/',
+    },
     {
-    name:'Analemma',
-    type:'Интернет-магазин',
-    slug:'store',
-    img:projectImg4,
-    background:'linear-gradient(90deg, #005706 0%, #87E218 100%)',
-    shadowColor:'#07bb7f',
-    technologies:['js','html','css'],
-    description:'Интернет магазин ювелирных украшений, цифровых и спортивных товаров',
-    linkGit:null,
-    linkWeb:'https://analemmatrade.ru/',
-  },
+      name:'ron1code',
+      type:t('projects.typeProjects.app'),
+      slug:'app',
+      img:projectImg2,
+      description:t('projects.descrProjects.ron1code'),
+      background:'linear-gradient(90deg, #FD1284 0%, #FD123D 100%)',
+      shadowColor:'#FD123D',
+      technologies:['vue','js','html','css'],
+      linkGit:'https://github.com/ron1ndev/ron1Code',
+      linkWeb:'https://ron1ndev.github.io/ron1Code/#projects',
+    },
     {
-    name:'NeDETI',
-    type:'Интернет-магазин',
-    slug:'store',
-    img:projectImg9,
-    background:'linear-gradient(90deg, #26C6DA 0%, #23DA9A 100%)',
-    shadowColor:'#2ef8ff',
-    technologies:['js','html','css'],
-    description:'Одежда для подростков и детей премиум качества',
-    linkGit:null,
-    linkWeb:'https://nedeti.store/',
-  },
+      name:'Halvace',
+      type:t('projects.typeProjects.store'),
+      slug:'store',
+      img:projectImg3,
+      background:'linear-gradient(90deg, #F27964 0%, #E47B5A 100%)',
+      shadowColor:'#F27964',
+      technologies:['js','html','css'],
+      description:t('projects.descrProjects.halvace'),
+      linkGit:'https://github.com/ron1ndev/Halvace',
+      linkWeb:'https://ron1ndev.github.io/Halvace/',
+    },
     {
-    name:'Rent',
-    type:'Лендинг',
-    slug:'landing',
-    img:projectImg6,
-    background:'linear-gradient(90deg, #151C2B 0%, #274384 100%)',
-    shadowColor:'#151C2B',
-    technologies:['js','html','css'],
-    description:'Обслуживаем и ремонтируем жилую и коммерческую недвижимость по предоставленным нами работам.',
-    linkGit:'https://github.com/ron1ndev/RentPage',
-    linkWeb:'https://ron1ndev.github.io/RentPage/',
-  },
-  {
-    name:'Porche',
-    type:'Лендинг',
-    slug:'landing',
-    img:projectImg7,
-    background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
-    shadowColor:'#1E1E1E',
-    technologies:['js','html','css'],
-    description:'Обзор Porsch Panamera',
-    linkGit:'https://github.com/ron1ndev/AutoPorschePage',
-    linkWeb:'https://ron1ndev.github.io/AutoPorschePage/',
-  },
+      name:'Romkom',
+      type:t('projects.typeProjects.buisnes'),
+      slug:'buisnes',
+      img:projectImg8,
+      background:'linear-gradient(90deg, #6400E9 0%, #41A0D9 100%)',
+      shadowColor:'#6400E9',
+      technologies:['js','html','css'],
+      description:t('projects.descrProjects.romkom'),
+      linkGit:null,
+      linkWeb:'https://romkom.ru/o-kompanii/',
+    },
     {
-    name:'TORide',
-    type:'Лендинг',
-    slug:'landing',
-    img:projectImg5,
-    background:'linear-gradient(90deg, #040C1C 0%, #133882 100%)',
-     shadowColor:'#040C1C',
-    technologies:['js','html','css'],
-    description:null,
-    linkGit:'https://github.com/ron1ndev/toRidePage',
-    linkWeb:'https://ron1ndev.github.io/toRidePage/index.html',
-  },
+      name:'Analemma',
+      type:t('projects.typeProjects.store'),
+      slug:'store',
+      img:projectImg4,
+      background:'linear-gradient(90deg, #005706 0%, #87E218 100%)',
+      shadowColor:'#07bb7f',
+      technologies:['js','html','css'],
+      description:t('projects.descrProjects.analemma'),
+      linkGit:null,
+      linkWeb:'https://analemmatrade.ru/',
+    },
+    {
+      name:'NeDETI',
+      type:t('projects.typeProjects.store'),
+      slug:'store',
+      img:projectImg9,
+      background:'linear-gradient(90deg, #26C6DA 0%, #23DA9A 100%)',
+      shadowColor:'#2ef8ff',
+      technologies:['js','html','css'],
+      description:t('projects.descrProjects.nedeti'),
+      linkGit:null,
+      linkWeb:'https://nedeti.store/',
+    },
+    {
+      name:'Rent',
+      type:t('projects.typeProjects.landing'),
+      slug:'landing',
+      img:projectImg6,
+      background:'linear-gradient(90deg, #151C2B 0%, #274384 100%)',
+      shadowColor:'#151C2B',
+      technologies:['js','html','css'],
+      description:t('projects.descrProjects.rent'),
+      linkGit:'https://github.com/ron1ndev/RentPage',
+      linkWeb:'https://ron1ndev.github.io/RentPage/',
+    },
+    {
+      name:'Porche',
+      type:t('projects.typeProjects.landing'),
+      slug:'landing',
+      img:projectImg7,
+      background:'linear-gradient(90deg, #464A63 0%, #1E1E1E 100%)',
+      shadowColor:'#1E1E1E',
+      technologies:['js','html','css'],
+      description:t('projects.descrProjects.porche'),
+      linkGit:'https://github.com/ron1ndev/AutoPorschePage',
+      linkWeb:'https://ron1ndev.github.io/AutoPorschePage/',
+    },
+    {
+      name:'TORide',
+      type:t('projects.typeProjects.landing'),
+      slug:'landing',
+      img:projectImg5,
+      background:'linear-gradient(90deg, #040C1C 0%, #133882 100%)',
+      shadowColor:'#040C1C',
+      technologies:['js','html','css'],
+      description:null,
+      linkGit:'https://github.com/ron1ndev/toRidePage',
+      linkWeb:'https://ron1ndev.github.io/toRidePage/index.html',
+    },
+  ]
+})
 
-]
 
 const activeTab = ref('all')
 
 const filteredProjects = computed(()=>{
-  return projects.filter(project=>{
+  return projects.value.filter(project=>{
 
     if(activeTab.value === 'all'){
       return true
@@ -181,6 +197,14 @@ const pluralize = (count, forms) => {
       }
 }
 
+watch(projects, (newProjects)=>{
+
+  if(selectProject?.value.slug){
+    const updated = newProjects.find(p=>p.slug === selectProject.value.slug)
+    if( updated ) selectProject.value = updated
+  }
+})
+
 
 
 </script>
@@ -196,7 +220,7 @@ const pluralize = (count, forms) => {
 
 
             <div class="projects__bestcase">
-                <div class="projects__bestcase-title">Главный SPA-проект</div>
+                <div class="projects__bestcase-title">{{ t('projects.mainSPAproject') }}</div>
                 <ProjectsCard
                   :project="projects[0]"
                   @handleOver="handleOver"/>
@@ -206,7 +230,7 @@ const pluralize = (count, forms) => {
 
           
           <div class="projects__main">
-            <div class="projects__icon-code">{{ codeIcon }} <span>{{ filteredProjects.length  }} {{ pluralize(filteredProjects.length, ['Проект', 'Проекта', 'Проектов']) }}</span></div>
+            <div class="projects__icon-code">{{ codeIcon }} <span>{{ filteredProjects.length  }} {{ pluralize(filteredProjects.length, [t('projects.formNameProjects.form1'), t('projects.formNameProjects.form2'), t('projects.formNameProjects.form3')]) }}</span></div>
             <ul class="projects__tabs-controls">
               <li class="projects__tab-control" v-for="tab in tabs" :key="tab.slug" :class="{'active': activeTab === tab.slug}" @click="changeTab(tab.slug)">
                   {{ tab.title }}
