@@ -119,6 +119,17 @@ const i18n = createI18n({
           year: '2020',
         },
       ],
+      contacts: {
+        title: 'Contacts',
+        descr: 'Send a message to the email',
+        inputName: 'Name',
+        textAreaName: 'Message',
+        btn: 'Send',
+        linkDescr: 'Social media',
+        messageSuccess:'Message sent!',
+        copySuccess:'Copied successfully!',
+        tooltip: 'Copy link',
+      }
     },
     ru: {
       hero: {
@@ -225,6 +236,17 @@ const i18n = createI18n({
           year: '2020',
         },
       ],
+      contacts:{
+        title:'Контакты',
+        descr:'Отправить сообщение на потчу',
+        inputName:'Имя',
+        textAreaName:'Сообщение',
+        btn:'Отправить',
+        linkDescr:'Социальные сети',
+        messageSuccess:'Сообщение отправлено',
+        copySuccess:'Успешно скопировано!',
+        tooltip:'Копировать ссылку',
+      }
     }
   }
   

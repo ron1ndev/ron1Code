@@ -4,9 +4,12 @@ import TelegramIcon from '@/components/ui/neon-btn/icons/telegramIcon.vue';
 import GitIcon from '@/components/ui/neon-btn/icons/gitIcon.vue';
 import InstagramIcon from '@/components/ui/neon-btn/icons/instagramIcon.vue';
 import { computed,ref,watch, nextTick, reactive , onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 import axios from 'axios';
 import { useDesktopStore } from '@/store/desktop';
 const store = useDesktopStore()
+
+const { t } = useI18n()
 
 const inputName = ref<HTMLInputElement | null>(null)
 const inputEmail = ref<HTMLInputElement | null>(null)
@@ -117,7 +120,7 @@ const handleSendMail = async () => {
     data.email = ''
     data.descr = ''
 
-    store.showSuccses('Сообщение отправлено!')
+    store.showSuccses(t('contacts.messageSuccess'))
 
   }catch(e){
    store.showErrors(e)
@@ -132,7 +135,8 @@ const copyText = async () =>{
 
   try{
     await navigator.clipboard.writeText(text)
-    store.showSuccses('Успешно скопировано!')
+    const copySuccses = t('contacts.copySuccess')
+    store.showSuccses(copySuccses)
 
   }catch(e){
     store.showErrors(e)
@@ -163,20 +167,20 @@ onMounted(()=>{
     <div class="contacts-modal__wrap">
 
         <div class="contacts-modal__info">
-          <h1 class="contacts-modal__title">Контакты</h1>
-          <p class="contacts-modal__descr">Отправить сообщение на потчу</p>
+          <h1 class="contacts-modal__title">{{ t('contacts.title') }}</h1>
+          <p class="contacts-modal__descr">{{ t('contacts.descr') }}</p>
         </div>
 
         <form class="contacts-modal__form" action="https://formspree.io/f/meokgavb" method="post" autocomplete="off">
 
           <div class="contacts-modal__inputs">
-            <input @focus="handleFocus" @blur="handleBlur('name')" v-model="data.name" ref="inputName" class="contacts-modal__input" type="text" name="name" placeholder="Имя">
+            <input @focus="handleFocus" @blur="handleBlur('name')" v-model="data.name" ref="inputName" class="contacts-modal__input" type="text" name="name" :placeholder="t('contacts.inputName')">
             <input @focus="handleFocus" @blur="handleBlur('email')" v-model="data.email" ref="inputEmail" class="contacts-modal__input" type="email" name="email" placeholder="Email">
           </div>
 
-          <textarea @focus="handleFocus" @blur="handleBlur('descr')" v-model="data.descr" ref="inputDescr" class="contacts-modal__textarea" name="descr" placeholder="Сообщение"></textarea>
+          <textarea @focus="handleFocus" @blur="handleBlur('descr')" v-model="data.descr" ref="inputDescr" class="contacts-modal__textarea" name="descr" :placeholder="t('contacts.textAreaName')"></textarea>
 
-          <button class="contacts-modal__btn" type="submit" @click.prevent="handleSendMail">Отправить</button>
+          <button class="contacts-modal__btn" type="submit" @click.prevent="handleSendMail">{{ t('contacts.btn') }}</button>
 
         </form>
 
@@ -194,7 +198,7 @@ onMounted(()=>{
           </div>
           <div class="contacts-modal__footer-descr">
             <div class="contacts-modal__footer-decor"></div>
-            <div class="contacts-modal__footer-text">Социальные сети</div>
+            <div class="contacts-modal__footer-text">{{ t('contacts.linkDescr') }}</div>
             <div class="contacts-modal__footer-decor"></div>
           </div>
           <div class="contacts-modal__mail-content">
@@ -206,7 +210,7 @@ onMounted(()=>{
             <el-tooltip
                 class="box-item"
                 effect="dark"
-                content="Копировать ссылку"
+                :content="t('contacts.tooltip')"
                 placement="top-start"
 
             >
