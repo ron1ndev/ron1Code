@@ -10,8 +10,6 @@ const store = useDesktopStore()
 
 const innerWidth = store.innerWidth
 
-console.log(innerWidth)
-
 const props = defineProps({
     experience:{
         type:Object,
@@ -26,11 +24,9 @@ const exItem = ref(null)
 
 const isReverse = props.index % 2 !== 0
 
-
 const observer = new IntersectionObserver((entries,observer)=>{
     entries.forEach(({ isIntersecting,target })=>{
         if(isIntersecting){
-
 
         target.querySelector('.item-experience__info').classList.add('active');
         target.querySelector('.item-experience__year').classList.add('active');
@@ -42,7 +38,6 @@ const observer = new IntersectionObserver((entries,observer)=>{
 },{
     threshold:innerWidth > 560 ? 0.8 : 0.3
 })
-
 
 onMounted( async () =>{
   await nextTick()
