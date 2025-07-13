@@ -59,6 +59,13 @@ const i18n = createI18n({
           porche: 'Overview of Porsche Panamera.',
           toride: null
         }
+      },
+      technologies:{
+        titleBlock:{
+          mainStack:'Main stack',
+          baseStack:'Base stack',
+        },
+        btnViewProject:'View'
       }
     },
     ru: {
@@ -106,6 +113,13 @@ const i18n = createI18n({
           porche:'Обзор Porsch Panamera',
           toride:null
         }
+      },
+      technologies:{
+        titleBlock:{
+          mainStack:'Основной стек',
+          baseStack:'Базовый стек',
+        },
+        btnViewProject:'Посмотреть'
       }
     }
   }
