@@ -3,17 +3,11 @@ import Header from '@/components/header/header.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import SidebarView from './sidebar-view/sidebarView.vue';
 import ProjectsCard from './project-item/projectsCard.vue'
-import { ref, computed, reactive, watch} from 'vue';
-import { useDesktopStore } from '@/store/desktop';
+
+import { ref, computed, watch} from 'vue';
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
-
-const store = useDesktopStore()
-
-const isDark = computed(()=>{
-  return store.isDarkTheme
-})
 
 const codeIcon = '</>'
 
@@ -28,15 +22,6 @@ const tabs = computed(()=>{
     { title:t('projects.tabControls.landing'), slug: 'landing' },
   ]
 })
-
-const tabsSkelet =  [
-    { title:'Все', slug: 'all' },
-    { title:'Web-приложение', slug: 'app' },
-    { title:'Интернет-магазин', slug: 'store' },
-    { title:'Бизнес', slug: 'buisnes' },
-    { title:'Лендинг', slug: 'landing' },
-  ]
-
 
 import projectImg1 from '@/assets/img/projects/otask3.png'
 import projectImg2 from '@/assets/img/projects/home.png'
@@ -161,7 +146,6 @@ const projects = computed(()=>{
   ]
 })
 
-
 const activeTab = ref('all')
 
 const filteredProjects = computed(()=>{
@@ -218,7 +202,6 @@ watch(projects, (newProjects)=>{
             <SidebarView
             :project="selectProject"/>
 
-
             <div class="projects__bestcase">
                 <div class="projects__bestcase-title">{{ t('projects.mainSPAproject') }}</div>
                 <ProjectsCard
@@ -228,7 +211,6 @@ watch(projects, (newProjects)=>{
 
           </div>
 
-          
           <div class="projects__main">
             <div class="projects__icon-code">{{ codeIcon }} <span>{{ filteredProjects.length  }} {{ pluralize(filteredProjects.length, [t('projects.formNameProjects.form1'), t('projects.formNameProjects.form2'), t('projects.formNameProjects.form3')]) }}</span></div>
             <ul class="projects__tabs-controls">

@@ -24,7 +24,7 @@ const mouseOver = (project) =>{
 <template>
 
   <div class="projects-card" @mouseover="mouseOver(project)">
-    <div class="projects-card__wrap" :class="{'gold': project.name === 'O!task'}" :style="{'--bgGrafiend': project.background, '--shadowColor':project.shadowColor }">
+    <div class="projects-card__wrap" :style="{'--bgGrafiend': project.background, '--shadowColor':project.shadowColor }">
       <div class="projects-card__page">
         <img :src="project.img" :alt="project.name">
       </div>

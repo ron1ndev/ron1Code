@@ -7,7 +7,7 @@ import csssIcon from '@/assets/img/skills/1.png'
 
 const { t } = useI18n()
 
-import { defineOptions, defineProps, computed, reactive } from 'vue';
+import { defineOptions, defineProps, computed } from 'vue';
 defineOptions({
   name:'sidebarView'
 })
@@ -19,22 +19,22 @@ const props = defineProps({
   }
 })
 
-const defaultCardView = computed(()=>{
-     return {
-        name:'O!task',
-        type:t('projects.typeProjects.app'),
-        slug:'app',
-        description:t('projects.descrProjects.otask'),
-        technologies:['vue','js','html','css'],
-      }
-})
-
 const technologies = [
   {slug:'vue', icon:vueIcon},
   {slug:'js', icon:jsIcon},
   {slug:'html', icon:htmlIcon},
   {slug:'css', icon:csssIcon},
 ]
+
+const defaultCardView = computed(()=>{
+  return {
+    name:'O!task',
+    type:t('projects.typeProjects.app'),
+    slug:'app',
+    description:t('projects.descrProjects.otask'),
+    technologies:['vue','js','html','css'],
+  }
+})
 
 const visibleTechnologies = computed(()=>{
  return technologies.filter(item=>{

@@ -5,13 +5,8 @@ import NeonBtn from '@/components/ui/neon-btn/neon-btn.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
 import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router'
-import { useDesktopStore } from '@/store/desktop';
 
 const router = useRouter()
-
-const store = useDesktopStore()
-
-console.log()
 
 const skills = [
   {file:'1.png',name:'CSS 3',alt:'CSS 3'},
@@ -22,7 +17,6 @@ const skills = [
   {file:'5.png',name:'Git',alt:'Git'},
   {file:'9.svg',name:'Vite',alt:'Vite'},
   {file:'6.png',name:'Gulp',alt:'Gulp'},
-  // {path:'/src/assets/img/skills/7.png',name:'Webpack',alt:'Webpack'},
 ]
 
 const vh  = ref(window.innerHeight * 0.01)
@@ -31,10 +25,6 @@ const setVH = () =>{
   vh.value = window.innerHeight * 0.01
   document.documentElement.style.setProperty('--vh', `${vh.value}px`)
 }
-
-
-
-
 
 const InitText = reactive({
   welcome:'Hello World',
@@ -171,8 +161,6 @@ onUnmounted(()=>{
     <MobileMenu/>
 
     <div class="glow"></div>
-
-    <div class="glow2"></div>
 
   </main>
 </template>

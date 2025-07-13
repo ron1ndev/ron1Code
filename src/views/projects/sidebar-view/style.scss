@@ -5,7 +5,6 @@
   border-radius: 16px;
   border: 2px solid var(--main-border-bg);
   padding: 20px;
-  // margin-bottom: 40px;
   animation: upBlock ease-out 0.8s forwards;
   &__name-project{
     font-size: 20px;
@@ -51,7 +50,6 @@
       max-width: 750px;
       margin: 0 auto;
       height: 160px;
-      // position: fixed;
       top: 60px;
       z-index: 1;
       animation: downBlock ease-out 0.8s forwards;
