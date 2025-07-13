@@ -20,8 +20,23 @@ const isDark = computed(()=>{
   return store.isDarkTheme 
 })
 
-const switchTheme  = () =>{
-  store.changeTheme(!isDark.value)
+const applyThemeClass = (isDark) => {
+  const root = document.documentElement
+  if (isDark) {
+    root.classList.add('theme-dark')
+    root.classList.remove('theme-light')
+  } else {
+    root.classList.add('theme-light')
+    root.classList.remove('theme-dark')
+  }
+}
+
+const switchTheme = () => {
+  const newTheme = !isDark.value
+  store.changeTheme(newTheme)
+  const themeMode = newTheme ? 'dark' : 'light'
+  localStorage.setItem('themeMode', themeMode)
+  applyThemeClass(newTheme) 
 }
 
 const switchLocal = ()=>{
@@ -31,18 +46,6 @@ const openModal = ()=>{
   store.changeVisibleModal(true)
 }
 
-
-watch(isDark,(val)=>{
-  const root = document.documentElement
-
-  if(!val){
-    root.classList.add('theme-light')
-    root.classList.remove('theme-dark')
-  }else{
-    root.classList.add('theme-dark')
-    root.classList.remove('theme-light')
-  }
-})
 
 </script>
 

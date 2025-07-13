@@ -18,7 +18,17 @@ watch(isLockBody,(newVal)=>{
 
 
 onMounted(() => {
-  document.documentElement.classList.add(`theme-${store.themeMode}`);
+  const themeMode = localStorage.getItem('themeMode')
+  const isDark = themeMode === 'dark'
+
+  if(themeMode){
+    store.changeTheme(isDark)
+    document.documentElement.classList.add(`theme-${themeMode}`);
+  }else{
+    store.changeTheme(isDark)
+    document.documentElement.classList.add(`theme-${store.themeMode}`);
+  }
+  
   if (document.readyState === 'complete') {
     idInterval = setTimeout(() => {
       isLoading.value = false;
