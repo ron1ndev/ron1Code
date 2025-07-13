@@ -3,14 +3,9 @@ import Header from '@/components/header/header.vue';
 import SkillProgress from '@/components/skill-progress/skillProgress.vue';
 import Skills from '@/components/skills/skills.vue';
 import MobileMenu from '@/components/mobile-menu/mobileMenu.vue';
-import { useDesktopStore } from '@/store/desktop';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n()
-
-const store = useDesktopStore()
-
-const innerWidth = store.innerWidth
 
 const skills = [
   {file:'10.png',name:'CSS 3',alt:'CSS 3'},
