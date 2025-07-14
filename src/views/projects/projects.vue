@@ -218,7 +218,7 @@ watch(projects, (newProjects)=>{
                   {{ tab.title }}
               </li>
             </ul>
-            <div class="projects__content-list" :style="{paddingBottom: filteredProjects.length > 6 ? '100px' : null}">
+            <div class="projects__content-list" :style="{paddingBottom: filteredProjects.length > 2 ? '100px' : '10px'}">
 
            
             <ul class="projects__list">

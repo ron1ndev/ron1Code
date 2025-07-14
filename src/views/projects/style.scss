@@ -57,6 +57,7 @@ main{
       box-shadow:0px 0px 20px 5px rgba($color: #FD1284, $alpha: 0.5);
       color: #fff;
       margin-bottom: 16px;
+      margin-left: 10px;
       span{
         margin-left: 12px;
       }
@@ -65,9 +66,9 @@ main{
   &__main{
     max-width: 860px;
     min-width: 860px;
-    height: 650px;
+    height: 660px;
     background: var(--projects-content-bg);
-    padding: 16px;
+    padding: 16px 6px;
     border-radius: 16px;
     border: 2px solid var(--main-border-bg);
     overflow: hidden;
@@ -108,8 +109,7 @@ main{
     display: flex;
     align-items:center;
     gap: 12px;
-    padding: 5px;
-    border-radius:16px;
+    padding: 10px 10px;
     margin-bottom: 16px;
 
   @media (max-width:600px) {
@@ -132,6 +132,10 @@ main{
       border-color: #FD1284;
       background: #FD1284;
        box-shadow:0px 0px 20px 5px rgba($color: #FD1284, $alpha: 0.5);
+
+    @media (max-width:776px) {
+      box-shadow:0px 0px 10px 3px rgba($color: #FD1284, $alpha: 0.5);
+    }
 
     }
   }
