@@ -187,8 +187,9 @@ main{
   content:'';
   display: inline-block;
   width: 3px;
-  height: 150px;
-  background: #{$mainBackgroundGradient};
+  height: 100px;
+  background: #03e9f4ed;
+  box-shadow:0px 0px 10px #03e9f4ed;
   background-size: 200% 200%; 
   position: relative;
   right: -50%;
@@ -221,7 +222,7 @@ main{
   content:attr(data-label);
   display: inline-block;
   position: relative;
-  top: 300px;
+  top: 250px;
   right: -70%;
   width: 0;
   transform: rotate(90deg);
@@ -233,18 +234,134 @@ main{
   }
 }
 .hero__git {
+  transition: all .3s;
+  position: relative;
+  z-index: 1;
+    &:after{
+      content:"";
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      box-shadow:0px 0px 10px 2px #03e9f4ed;
+      z-index: -1;
+      border-radius:50%;
+      opacity: 1;
+      transition: all .3s;
+  }
+  &:hover{
+    // opacity: 0.4;
+        &:after{
+      content:"";
+      box-shadow:0px 0px 10px 5px #03e9f4ed;
+     }
+  }
   .logo__icon-path {
     color:var(--main-text);
+    color: #03e9f4ed;
   }
   @media (max-width: #{$md2}px) {
     display: none;
   }
 }
 .hero__tg {
+  transition: all .3s;
+  position: relative;
+  &:after{
+  content:"";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow:0px 0px 10px 10px #03e9f4ed;
+  z-index: -1;
+  border-radius:50%;
+  opacity: 1;
+  transition: all .3s;
+
+  }
+  &:hover{
+    // opacity: 0.4;
+    &:after{
+    content:"";
+    opacity: 1;
+    box-shadow:0px 0px 15px 10px #03e9f4ed;
+    }
+    svg{
+      color: #03e9f4ed;
+      
+    }
+  }
   margin-bottom: 20px;
   svg{
+   transition: all .3s;
    color: var(--main-text);
+   color: #03e9f4ed;
   }
+}
+.theme-light{
+  .hero__git {
+      &:after{
+        box-shadow:none;
+    }
+    &:hover{
+      // opacity: 0.4;
+        &:after{
+          content:"";
+          box-shadow:none;
+        }
+    }
+    .logo__icon-path {
+      color:var(--main-text);
+    }
+    @media (max-width: #{$md2}px) {
+      display: none;
+    }
+  }
+  .hero__tg {
+    &:after{
+    content:"";
+    box-shadow:none;
+    }
+    &:hover{
+      &:after{
+      content:"";
+      box-shadow:none;
+      }
+      svg{
+        color: var(--main-text);
+      }
+    }
+    margin-bottom: 20px;
+    svg{
+    transition: all .3s;
+    color: var(--main-text);
+    }
+  }
+  .hero__social::after{
+  content:'';
+  display: inline-block;
+  width: 3px;
+  height: 100px;
+  background: #{$mainBackgroundGradient};
+  box-shadow:none;
+  background-size: 200% 200%; 
+  position: relative;
+  right: -50%;
+
+  animation: gradientShift 3s infinite linear;
+
+  @media (max-width: #{$md2}px) {
+   display: none;
+  }
+  
+}
 }
 .hero__img-code1 {
   position: absolute;
