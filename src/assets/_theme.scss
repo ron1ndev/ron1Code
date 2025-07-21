@@ -12,6 +12,11 @@
 
  // projects
  --projects-content-bg:#fff;
+--mobile-menu-bg:rgba(255, 255, 255, 0.5);
+--mobile-menu-item-active:#036bf4;
+--mobile-menu-shadow:0px 15px 45px 1px rgb(22, 22, 22);
+
+ 
  
 }
 
@@ -30,4 +35,8 @@
 
   // projects
  --projects-content-bg:rgba(101, 101, 101, 0.1);
+ --mobile-menu-bg:rgba(34, 33, 33, 0.5);
+ --mobile-menu-item-active:#00eeff;
+ --mobile-menu-shadow:0px 15px 45px 1px #121213;
+
 }

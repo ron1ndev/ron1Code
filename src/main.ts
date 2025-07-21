@@ -23,6 +23,7 @@ const i18n = createI18n({
         label:'Сommunity'
       },
       menu:{
+        home: 'Home',
         projects: 'Projects',
         skills: 'Skills',
         experience: 'Experience',
@@ -140,6 +141,7 @@ const i18n = createI18n({
         label:'Сообщества'
       },
       menu:{
+        home: 'Главная',
         projects: 'Проекты',
         skills: 'Технологии',
         experience: 'Опыт',

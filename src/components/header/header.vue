@@ -52,16 +52,14 @@ const openModal = ()=>{
 <template>
   <header class="header" id="header">
     <div class="header__content _container">
-       <RouterLink to="/">
-          <div class="header__logo logo"
-          :class="{'active':currenRouter === '/'}">
-              <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 0.5C16.4043 0.500079 16.7958 0.636048 17.0859 0.889648L31.1025 13.1396H31.1035C31.3895 13.389 31.5065 13.6888 31.5 13.9717C31.4934 14.2579 31.3587 14.5685 31.0635 14.8262C30.446 15.3641 29.5328 15.3883 28.96 14.8877L28.3623 14.3652L27.5332 13.6406V26.25C27.5332 26.88 26.9263 27.5 26.0303 27.5H18.5215V20.5H13.5166V27.5H6.00684C5.11077 27.5 4.50391 26.88 4.50391 26.25V13.6055L3.6748 14.3311L2.99121 14.9287C2.42905 15.42 1.56673 15.3802 0.935547 14.8271V14.8262L0.832031 14.7275C0.60883 14.4916 0.505609 14.2229 0.5 13.9727C0.493712 13.6898 0.610064 13.3891 0.895508 13.1387L0.896484 13.1396L14.9131 0.889648C15.2033 0.635974 15.5955 0.5 16 0.5Z" fill="currentColor" stroke="currentColor"/>
-            </svg>
-          </div>
+       
+        <RouterLink to="/" class="header__logo logo">
+            <img v-if="isDark" src="/public/logo-light.svg" alt="">
+            <img v-else src="/public/logo-dark.svg" alt="">
         </RouterLink>
         <nav class="header__menu">
             <ul class="header__list">
+                <li class="header__item" :class="{'active':currenRouter === '/'}"><RouterLink to="/" class="header__link" href="#home">{{ $t('menu.home') }}</RouterLink></li>
                 <li class="header__item" :class="{'active':currenRouter === '/projects'}"><RouterLink to="/projects" class="header__link" href="#projects">{{ $t('menu.projects') }}</RouterLink></li>
                 <li class="header__item" :class="{'active':currenRouter === '/skills'}"><RouterLink to="/skills" class="header__link" >{{ $t('menu.skills') }}</RouterLink></li>
                 <li class="header__item" :class="{'active':currenRouter === '/Experience'}"><RouterLink to="/Experience" class="header__link" href="#experience">{{ $t('menu.experience') }}</RouterLink></li>

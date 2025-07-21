@@ -12,7 +12,7 @@
   align-items: center;
   padding: 10px 0px;
   
-  @media (max-width: #{$md1}px) {
+  @media (max-width: #{$md3}px) {
     padding: 10px 10px;
   }
 
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   gap: 0px 8px;
-  transform: translate(20px,0px);
+  transform: translate(-10px,0px);
   position: relative;
   cursor: pointer;
   color: var(--main-text);
@@ -117,9 +117,10 @@
   display: flex;
   gap: 0px 32px;
 
-  @media (max-width: #{$md3}px) {
-    gap: 0px 10px;
+  @media (max-width: #{$md2}px) {
+    gap: 0px 16px;
   }
+
   @media (max-width: 600px) {
     flex-wrap: wrap;
 
